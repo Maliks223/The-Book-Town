@@ -1,0 +1,107 @@
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    height: 8vh;
+    background-color: #1b1919;
+    color: #eee;
+    padding: 0 4rem;
+    position: relative;
+    font-size: 1.1rem;
+}
+
+.logo{
+    display: flex;
+    align-items: center;
+}
+
+.logo a{
+    display: flex;
+    text-decoration: none;
+    color: #eee;
+    align-items: center;
+}
+
+.logo i{
+    margin-left:0.7rem ;
+    font-size: 1.3rem  ;
+}
+
+.logo h3{
+    font-size: 1.5 rem;
+    letter-spacing: 2px;
+}
+
+ul{
+    display: flex;
+    list-style-type: none;
+}
+
+ul li{
+    margin: 0 1rem;
+}
+
+ul li a{
+    text-decoration: none;
+    display: block;
+    color: #eee;
+    position: relative;
+}
+
+ul li a:hover{
+    color: #dfb646;
+}
+
+ul li a::after{
+    content: "";
+    position: absolute;
+    height: 0.12rem;
+    width: 0%;
+    left: 0;
+    top: 1.6rem;
+    background-color: #dfb646;
+    transition: width 0.2s linear;
+}
+
+ul li a:hover::after{
+    width: 100%;
+}
+
+.toggle-button{
+    font-size: 1.8rem;
+    display: none;
+}
+
+@media only screen and (max-width:700px) {
+    nav{
+        padding: 0 2rem;
+    }
+}
+
+@media only screen and (max-width:650px) {
+    .toggle-button{
+        display: block;
+    }
+    
+    ul{
+        flex-direction: column;
+        position: fixed;
+        top: 8vh;
+        background-color: #252525;
+        width: 100%;
+        height: 100%;
+        left: -1000px;
+        align-items: center;
+        justify-content: flex-start;
+        transition:all 0.3s linear ;
+    }
+
+    ul li{
+        padding: 2rem 0;
+        font-size: 1.2rem;
+    }
+
+    ul.active{
+        left: 0;
+    }
+}
