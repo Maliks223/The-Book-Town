@@ -46,6 +46,7 @@ ul li a{
     display: block;
     color: #eee;
     position: relative;
+    font-weight: bolder;
 }
 
 ul li a:hover{
