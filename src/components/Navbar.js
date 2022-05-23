@@ -15,7 +15,7 @@ const Navbar = () => {
     <>
       <nav>
         <div className="logo">
-            <Link to="/">
+            <Link onClick={() => setToggle(false)} to="/">
                 <h3>The BookTown</h3>
                 <i className="fa-solid fa-book"></i>
             </Link>

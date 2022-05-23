@@ -3,7 +3,7 @@ nav{
     justify-content: space-between;
     align-items: center;
     height: 8vh;
-    background-color: #1b1919;
+    background-color: #6e6969;
     color: #eee;
     padding: 0 4rem;
     position: relative;
@@ -50,7 +50,7 @@ ul li a{
 }
 
 ul li a:hover{
-    color: #dfb646;
+    color: #57e4b7;
 }
 
 ul li a::after{
@@ -60,7 +60,7 @@ ul li a::after{
     width: 0%;
     left: 0;
     top: 1.6rem;
-    background-color: #dfb646;
+    background-color: #57e4b7;
     transition: width 0.2s linear;
 }
 
