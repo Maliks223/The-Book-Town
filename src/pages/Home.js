@@ -1,9 +1,9 @@
 import React, { Component } from 'react';
 import Banner from '../components/Banner';
 import Card from '../components/Card';
-import book1 from "../assets/book-9.png"
-import book2 from "../assets/book-4.png"
-import book3 from "../assets/book-5.png"
+import book1 from "../assets/book-1.png"
+import book2 from "../assets/book-10.png"
+import book3 from "../assets/book5.png"
 const Home = () => {
     return (  
         <div>
