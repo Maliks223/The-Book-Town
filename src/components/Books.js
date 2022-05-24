@@ -20,8 +20,9 @@ const Books = () => {
   return (
     <div>
       {books &&
-        books.map((book, index) => (
+        books.map((book) => (
           <Book
+            key={book._id}
             title={book.title}
             author={book.author}
             description={book.description}
