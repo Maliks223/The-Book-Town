@@ -18,7 +18,7 @@ const Book = ({
         <p>Description: {description}</p>
         <h2>Category: {category}</h2>
         <img src={image} alt="book" />
-        <p>Available: {isAvailable}</p>
+        <p>Available: {isAvailable.toString()}</p>
         <h4>{pdf}</h4>
       </div>
     </>

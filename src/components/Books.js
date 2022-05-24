@@ -6,7 +6,7 @@ import Book from "./Book";
 const Books = () => {
   const [books, setBooks] = useState();
   const sendRequest = async () => {
-    const res = axios
+    const res = await axios
       .get("http://localhost:3002/books")
       .catch((err) => console.log(err));
 
