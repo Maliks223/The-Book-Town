@@ -2,8 +2,13 @@ import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
+import { useDispatch, useSelector } from "react-redux";
+import { authAction } from "../store";
 
-const Navbar = () => {
+const Admin = () => {
+  const dispath = useDispatch();
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+
   const [toggle, setToggle] = useState(false);
 
   const togglehandler = () => {
@@ -18,13 +23,18 @@ const Navbar = () => {
             <h3>The BookTown</h3>
             <i className="fa-solid fa-book"></i>
           </Link>
-          <div>
-            <ul>
-              <li>
-                <Link to="/books">All Books</Link>
-              </li>
-            </ul>
-          </div>
+          {isLoggedIn && (
+            <div>
+              <ul>
+                <li>
+                  <Link to="/books">All Books</Link>
+                </li>
+                <li>
+                  <Link to="/userBook">User Books</Link>
+                </li>
+              </ul>
+            </div>
+          )}
         </div>
         <ul className={toggle ? "active" : ""}>
           <li>
@@ -43,7 +53,24 @@ const Navbar = () => {
             </Link>
           </li>
         </ul>
-        <div></div>
+        <div>
+          {!isLoggedIn && (
+            <>
+              {" "}
+              <button>
+                <Link to="/auth">Login</Link>
+              </button>
+              <button>
+                <Link to="/auth">Signup</Link>
+              </button>
+            </>
+          )}
+          {isLoggedIn && (
+            <button onClick={() => dispath(authAction.logout())}>
+              <Link to="/auth">Logout</Link>
+            </button>
+          )}
+        </div>
         <div onClick={togglehandler} className="toggle-button">
           <i className={toggle ? "fa-solid fa-xmark" : "fa-solid fa-bars"}></i>
         </div>
@@ -52,4 +79,4 @@ const Navbar = () => {
   );
 };
 
-export default Navbar;
+export default Admin;
