@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
+import AboutUsImage from '../components/AboutUsImage';
+
 const AboutUs = () => {
     return (  
-        <div>
-            <h1>AboutUs</h1>
+        <div className='about-us'>
+            <AboutUsImage/>
         </div>
     );
 }
