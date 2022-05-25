@@ -47,8 +47,14 @@ const Card = ({title,imageUrl,body}) => {
                                 <input id='nb' type="nummber"/>
                             </label><br />
 
-                            <button type='submit'>Submit</button>&nbsp;
-                            <button onClick={handleToggle}>Close</button>
+                            <label htmlFor="from">From:</label>
+                            <input type="date" id="from"/>
+
+                            <label htmlFor="to">To:</label>
+                            <input type="date" id="to"/>
+
+                            <button className='submit-btn' type='submit'>Submit</button>&nbsp;
+                            <button className='close-btn' onClick={handleToggle}>Close</button>
                         </form>
                     </div>
                 </div>

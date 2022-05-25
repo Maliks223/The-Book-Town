@@ -48,11 +48,13 @@ h3,p{
     margin-bottom: 0.5rem;
 }
 
-.btnCard button{
+.btnCard button , .submit-btn, .close-btn{
     background-color: dodgerblue;
     border-radius: 0.5rem;
     color: white;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
+    padding: 5px;
+    font-size: 15px;
 }
 
 .lend{
@@ -65,6 +67,10 @@ h3,p{
 .card-flex{
     display: flex;
     justify-content: space-around;
+  }
+
+label{
+    font-weight: bold;
   }
 
 .viewAll-btn{
@@ -138,10 +144,10 @@ h2{
 input{
     width: 100%;
     padding: 10px 20px;
-  margin: 8px 0;
-  box-sizing: border-box;
-  border: 2px solid dodgerblue;
-  border-radius: 4px;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: 2px solid dodgerblue;
+    border-radius: 4px;
 }
 
 @media screen and (max-width:935px) {
