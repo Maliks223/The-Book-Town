@@ -3,11 +3,15 @@ import axios from "axios";
 import { useNavigate } from "react-router-dom";
 
 const User = () => {
+  const id = localStorage.getItem("bookId");
   const navigate = useNavigate();
+  //   const [user, setUser] = useState();
   const [inputs, setInputs] = useState({
     name: "",
     email: "",
     phone: "",
+    dateFrom: "",
+    dateTo: "",
   });
 
   const handleChange = (e) => {
@@ -23,6 +27,9 @@ const User = () => {
         name: inputs.name,
         email: inputs.email,
         phone: inputs.phone,
+        dateFrom: inputs.dateFrom,
+        dateTo: inputs.dateTo,
+        book: id,
       })
       .catch((err) => console.log(err));
 
@@ -33,9 +40,7 @@ const User = () => {
   const handleSubmit = (e) => {
     e.preventDefault(); // to prevent send the data to the url
     console.log(inputs);
-    sendRequest()
-    //   .then(() => navigate("/books"))
-      .then((data) => console.log(data));
+    sendRequest().then(() => navigate("/lend"));
   };
 
   return (
@@ -64,6 +69,21 @@ const User = () => {
           type="text"
           placeholder="Phone"
           name="phone"
+        />
+        <br />
+        <label>From: </label>
+        <input
+          onChange={handleChange}
+          value={inputs.name}
+          type="date"
+          name="dateFrom"
+        />
+        <label> To: </label>
+        <input
+          onChange={handleChange}
+          value={inputs.name}
+          type="date"
+          name="dateTo"
         />
         <br />
         <button type="submit">Submit</button>

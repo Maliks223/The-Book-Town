@@ -22,7 +22,7 @@ const Books = () => {
       {books &&
         books.map((book) => (
           <Book
-            key={book._id}
+            id={book._id}
             title={book.title}
             author={book.author}
             description={book.description}
