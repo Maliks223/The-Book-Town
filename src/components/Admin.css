@@ -1,0 +1,28 @@
+.login-btn,.SignUp-btn{
+    text-decoration: none;
+    color: #eee;
+    font-weight: bolder;
+}
+
+
+
+a.login-btn::after{
+    content: "";
+    position: absolute;
+    height: 0.12rem;
+    width: 0%;
+    left: 0;
+    top: 1.6rem;
+    background-color: #57e4b7;
+    transition: width 0.2s linear;
+}
+
+a.login-btn:hover::after{
+    width: 100%;
+}
+
+@media only screen and (max-width:817px) {
+    nav{
+        padding: 0 2.5rem;
+    }
+}

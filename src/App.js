@@ -11,14 +11,16 @@ import AddBook from "../src/components/AddBook";
 import BookDetails from "../src/components/BookDetails";
 import Auth from "../src/components/Auth";
 import { useSelector } from "react-redux";
+import Navbar from "./components/Navbar";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   console.log(isLoggedIn);
   return (
     <>
-      {/* <Navbar /> */}
+      {/* <Admin /> */}
       <Router>
+        {/* <Navbar /> */}
         <Admin />
         <Routes>
           <Route exact path="/" element={<Home />} />
