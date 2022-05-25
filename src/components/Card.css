@@ -52,13 +52,15 @@ h3,p{
     background-color: dodgerblue;
     border-radius: 0.5rem;
     color: white;
-    letter-spacing: 3px;
+    letter-spacing: 2px;
 }
 
 .lend{
     text-transform: uppercase;
     font-weight: bold;
     cursor: pointer;
+    font-size: 15px;
+    padding: 4px;
 }
 
 .card-flex{
