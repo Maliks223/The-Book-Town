@@ -42,6 +42,11 @@ const Navbar = () => {
               Contact Us
             </Link>
           </li>
+          <li>
+            <Link onClick={() => setToggle(false)} to="/user">
+              User Form
+            </Link>
+          </li>
         </ul>
         <div></div>
         <div onClick={togglehandler} className="toggle-button">

@@ -11,15 +11,17 @@ import AddBook from "../src/components/AddBook";
 import BookDetails from "../src/components/BookDetails";
 import Auth from "../src/components/Auth";
 import { useSelector } from "react-redux";
+import User from "../src/components/User";
+import Navbar from "../src/components/Navbar";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   console.log(isLoggedIn);
   return (
     <>
-      {/* <Navbar /> */}
+      {/* <Admin /> */}
       <Router>
-        <Admin />
+        <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<AboutUs />} />
@@ -29,6 +31,7 @@ function App() {
           <Route path="/userBook" element={<UserBook />} />
           <Route path="/userBook/:id" element={<BookDetails />} />
           <Route path="/auth/" element={<Auth />} />
+          <Route path="/user" element={<User />} />
         </Routes>
       </Router>
     </>
