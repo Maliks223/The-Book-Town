@@ -23,7 +23,6 @@ const Home = () => {
                 />
                 
             </div>
-            <a className='viewAll-btn'>View All</a>
             
             
         </div>
