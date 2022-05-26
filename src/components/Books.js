@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import Book from "./Book";
 
 const Books = () => {
+  
   const [books, setBooks] = useState();
   const sendRequest = async () => {
     const res = await axios
@@ -20,7 +21,7 @@ const Books = () => {
   return (
     <div>
       {books &&
-        books.map((book) => (
+        books.map((book,) => (
           <Book
             id={book._id}
             title={book.title}

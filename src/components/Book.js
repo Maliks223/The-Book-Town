@@ -1,6 +1,7 @@
 import React from "react";
 import { Link } from "react-router-dom";
 
+
 const Book = ({
   id,
   title,
@@ -11,9 +12,11 @@ const Book = ({
   isAvailable,
   pdf,
 }) => {
-  const handleClick=()=>{
-    localStorage.setItem("bookId", id);
-  }
+
+
+  // const handleClick = () => {
+  //   // localStorage.setItem("bookId", id);
+  // };
   return (
     <>
       <div className="card" key={id}>
@@ -25,10 +28,8 @@ const Book = ({
         <img src={image} alt="book" />
         <p>Available: {isAvailable.toString()}</p>
         <h4>PDF: {pdf}</h4>
-        <button type="submit" onClick={handleClick()}>
-          <Link to="/user">
-            Lend
-          </Link>
+        <button type="submit">
+          <Link to="/user" state={{bookId:id}}>Lend</Link>
         </button>
       </div>
     </>

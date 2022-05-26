@@ -1,10 +1,13 @@
 import React, { useState } from "react";
 import axios from "axios";
-import { useNavigate } from "react-router-dom";
+// import { useNavigate } from "react-router-dom";
+import { useLocation } from "react-router-dom";
 
 const User = () => {
-  const id = localStorage.getItem("bookId");
-  const navigate = useNavigate();
+  const location = useLocation();
+  const id = location.state.bookId;
+  console.log(location.state.bookId);
+  // const navigate = useNavigate();
   //   const [user, setUser] = useState();
   const [inputs, setInputs] = useState({
     name: "",
@@ -40,7 +43,7 @@ const User = () => {
   const handleSubmit = (e) => {
     e.preventDefault(); // to prevent send the data to the url
     console.log(inputs);
-    sendRequest().then(() => navigate("/lend"));
+    sendRequest();
   };
 
   return (
@@ -74,14 +77,14 @@ const User = () => {
         <label>From: </label>
         <input
           onChange={handleChange}
-          value={inputs.name}
+          value={inputs.dateFrom}
           type="date"
           name="dateFrom"
         />
         <label> To: </label>
         <input
           onChange={handleChange}
-          value={inputs.name}
+          value={inputs.dateTo}
           type="date"
           name="dateTo"
         />
