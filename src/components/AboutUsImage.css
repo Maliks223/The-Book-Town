@@ -2,7 +2,7 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin-top: 2rem;
+    margin-top: 4rem;
 }
 
 .aboutUsMain .img-aboutUs {
@@ -14,8 +14,10 @@
 }
 
 .aboutUsMain .img-aboutUs a img{
+    box-shadow:  0 0 3px dodgerblue, 0 0 5px dodgerblue;
+    border-radius: 15px;
     width: 100%;
-    height: 500px;
+    height:80vh;
     display: block;
     object-fit: cover;
     object-position: center;
@@ -23,7 +25,14 @@
 
 
 .aboutUsMain .content-aboutUs {
-    margin-top: 2rem;
+    box-shadow:  0 0 3px dodgerblue, 0 0 5px dodgerblue;
+    border-radius: 10px;
+    margin-top: 4rem;
+    background-color: rgb(219, 219, 219);
+    height:80vh;
+    font-size: larger;
+    padding: 25px;
+    width: 60vw;
 }
 
 @media (min-width: 768px) {
@@ -42,45 +51,3 @@
         width: 30%;
     }
 }
-
-/* .img-aboutUs{
-    transform: scale(1.3);
-padding:10px 0 0 100px;
-height: 55vh;
-width: 25%;
-border-radius: 20px;
-}
-
-.content-aboutUs{
-    max-width: 45%;
-    background-color: #E5E5E5;
-    height: 70vh;
-    margin: 100px;
-    width: 30%;
-    border-radius: 20px;
-}
-
-.content-aboutUs h1, h3{
-    font-size: 40px;
-    text-align: center;
-    margin-top: 30px;
-}
-
-.content-aboutUs p {
-    font-size: 20px;
-    margin:30px ;
-}
-
-@media (max-width:1280px){
-    .aboutUsMain{
-        display: block;
-        width: 50%;
-        margin: auto;
-        transform: scale(0.7);
-    }
-    .content-aboutUs{
-        width: 50vw!important; 
-        margin: auto;
-        padding-top: 100px; 
-    }
-} */
