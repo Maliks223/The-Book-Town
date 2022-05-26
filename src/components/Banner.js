@@ -9,23 +9,23 @@ import book3 from "../assets/book5.png"
 const Banner = () => {
     return ( 
         <div>
-            <section class="home" id="home">
+            <section className="home" id="home">
 
-                <div class="row">
+                <div className="row">
 
-                    <div class="content">
+                    <div className="content">
                         <h3>upto 75% off</h3>
                         <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Magnam deserunt nostrum accusamus. Nam alias sit necessitatibus, aliquid ex minima at!</p>
-                        <a href="#" class="btn">Read Now</a>
+                        <a href="#" className="btn">Read Now</a>
                     </div>
 
-                    <div class="books">
-                        <div class="image-wrapper">
+                    <div className="books">
+                        <div className="image-wrapper">
                             <a href="#" ><img src={book1} alt=""/></a>
                             <a href="#" ><img src= {book2}alt=""/></a>
                             <a href="#" ><img src={book3} alt=""/></a>
                         </div>
-                        <img src={stand} class="stand" alt=""/>
+                        <img src={stand} className="stand" alt=""/>
                     </div>
 
                 </div>
