@@ -18,19 +18,15 @@ const Navbar = () => {
             <h3>The BookTown</h3>
             <i className="fa-solid fa-book"></i>
           </Link>
-          <div>
-            <ul>
-              <li>
-                <Link to="/books">All Books</Link>
-              </li>
-            </ul>
-          </div>
         </div>
         <ul className={toggle ? "active" : ""}>
           <li>
             <Link onClick={() => setToggle(false)} to="/">
               Home
             </Link>
+          </li>
+          <li>
+              <Link to="/books">All Books</Link>
           </li>
           <li>
             <Link onClick={() => setToggle(false)} to="/about">

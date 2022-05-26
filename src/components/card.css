@@ -1,5 +1,84 @@
-/* .card{
-    display: flex;
+.card-container{
+    width: 300px;
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.3s;
+    animation: ease-in;
+    margin-top: 0.8rem;
+    flex-basis: 33.3333%;
+    max-width: 500px;
+}
 
-    border: 2px solid black;
-} */
+.card-container:hover{
+    transform: scale(.9);
+    box-shadow: 0px 0px 15px 0px;
+}
+
+.image-container img{
+    padding: 5px;
+    object-fit: cover;
+    overflow: hidden;
+    height: 17rem;
+    width: 19rem;
+}
+
+.card-content{
+    margin: 1rem;
+    margin-top: 0.3rem;
+
+}
+
+h3,p{
+    margin: 0;
+    padding: 0;
+}
+
+.card-title{
+    margin-bottom: 0.5rem;
+}
+
+.btnCard{
+    display: flex;
+    justify-content: center; 
+}
+
+.btnCard button{
+    padding: 0.5rem;
+    background-color: white;
+    border: none;
+    transition: 0.2s;
+    margin-bottom: 0.5rem;
+}
+
+.btnCard button{
+    background-color: dodgerblue;
+    border-radius: 0.5rem;
+}
+
+.lend{
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    text-decoration: none;
+    color: white;
+    letter-spacing: 3px;
+
+
+}
+
+.card-flex{
+    display: flex;
+    justify-content: space-around;
+  }
+
+  @media only screen and (max-width: 707px) {
+    .card-container{
+        flex-basis:50% ;
+    }
+  }
+
+  @media only screen and (max-width: 555px) {
+    .card-container{
+        flex-basis:100% ;
+    }
+  }
