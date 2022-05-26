@@ -82,10 +82,7 @@ const Auth = () => {
             id="password"
           />
           <br />
-          <button type="submit">Submit</button>
-          <button type="button" onClick={() => setisSignup(!isSignup)}>
-            Change to {isSignup ? "Login" : "Signup"}
-          </button>
+          <button type="submit">Login</button>
         </div>
       </form>
     </div>
