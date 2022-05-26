@@ -6,8 +6,7 @@ import AboutUs from './pages/AboutUs';
 import ContactUs from './pages/ContactUs';
 
 function App() {
-  return (
-    
+  return (<>
       <Router>
         <Navbar/>
         <Routes>
@@ -18,7 +17,7 @@ function App() {
         
         
       </Router>
-     
+      </>
     
   );
 }
