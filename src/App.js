@@ -20,8 +20,9 @@ function App() {
   console.log(isLoggedIn);
   return (
     <>
-      {/* <Navbar /> */}
+      {/* <Admin /> */}
       <Router>
+        {/* <Navbar /> */}
         <Admin />
         <Routes>
           <Route exact path="/" element={<Home />} />
