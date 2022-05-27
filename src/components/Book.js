@@ -37,13 +37,13 @@ const Book = ({
             </div>
 
             <p>Available: {isAvailable.toString()}</p>
-            <h4>PDF: {pdf}</h4>
+            
             
           </div>
           
           <div className="btnCard">
             <button type="submit">
-              <Link className="lend" to="/user" state={{bookId:id}}>Lend</Link>
+              <Link class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" className="lend" to="/user" state={{bookId:id}}>Lend</Link>
             </button>
           </div>
           
