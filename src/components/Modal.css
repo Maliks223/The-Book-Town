@@ -1,0 +1,16 @@
+input{
+    border: none;
+    padding: 7px 15px;
+
+  border-bottom: 2px solid dodgerblue;
+}
+
+h4{
+    color: dodgerblue;
+}
+
+.btn-secondary , .btn-primary{
+    font-size: 1.3rem;
+    letter-spacing: 2px;
+    padding: 0.1rem 1rem;
+}

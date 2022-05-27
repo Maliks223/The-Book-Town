@@ -11,7 +11,7 @@ const Banner = () => {
         <div>
             <section className="home" id="home">
 
-                <div className="row">
+                <div className="roww">
 
                     <div className="content">
                         <h3>upto 75% off</h3>
