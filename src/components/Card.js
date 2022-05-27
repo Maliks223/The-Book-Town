@@ -19,7 +19,7 @@ const Card = ({title,imageUrl,body}) => {
             
             <div className="btnCard">
                 <button>
-                    <a class="btn btn-primary" data-bs-toggle="modal" href="#exampleModalToggle" className="lend">
+                    <a className="lend">
                         Lend
                     </a>
                 </button>
