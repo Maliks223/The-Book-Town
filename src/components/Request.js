@@ -1,6 +1,26 @@
+import axios from "axios";
 import React from "react";
 
-const Request = ({ name, email, phone, dateFrom, dateTo, bookTitle }) => {
+const Request = ({
+  name,
+  email,
+  phone,
+  dateFrom,
+  dateTo,
+  bookTitle,
+  bookId,
+}) => {
+  const acceptRequest = async () => {
+    const res = await axios
+      .put(`http://localhost:3002/books/update/${bookId}`, {
+        isAvailable: false,
+      })
+      .catch((err) => console.log(err));
+
+    const data = await res.data;
+    console.log(data);
+    return data;
+  };
   return (
     <div>
       <h2>User Name: {name}</h2>
@@ -11,7 +31,7 @@ const Request = ({ name, email, phone, dateFrom, dateTo, bookTitle }) => {
         {dateTo.toString().split("T")[0]}
       </h5>
       <h3>Requested Book: {bookTitle}</h3>
-      <button>Accept</button>
+      <button onClick={acceptRequest}>Accept</button>
       <button>Reject</button>
     </div>
   );

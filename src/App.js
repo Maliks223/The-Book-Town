@@ -1,5 +1,4 @@
 import "./App.css";
-// import Navbar from "./components/Navbar";
 import { BrowserRouter as Router, Route, Routes } from "react-router-dom";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
@@ -13,7 +12,6 @@ import Auth from "../src/components/Auth";
 import { useSelector } from "react-redux";
 import User from "../src/components/User";
 import Navbar from "../src/components/Navbar";
-
 
 function App() {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);

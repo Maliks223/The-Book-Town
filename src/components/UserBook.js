@@ -2,7 +2,7 @@ import React from "react";
 import axios from "axios";
 import Request from "./Request";
 import { useEffect, useState } from "react";
-import Book from "./Book";
+// import Book from "./Book";
 
 const UserBook = () => {
   const [users, setUsers] = useState();
@@ -30,6 +30,7 @@ const UserBook = () => {
             dateTo={user.dateTo}
             phone={user.phone}
             bookTitle={user.book.title}
+            bookId={user.book._id}
           ></Request>
         ))}
     </div>
