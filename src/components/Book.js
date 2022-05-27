@@ -1,25 +1,34 @@
 import React from "react";
+
 import "./cardd.css";
+import { Link } from "react-router-dom";
 
 const Book = ({
+  id,
   title,
   author,
   description,
   category,
   image,
   isAvailable,
-  pdf,
 }) => {
+  // const handleClick = () => {
+  //   // localStorage.setItem("bookId", id);
+  // };
   return (
     <>
       <div className="card">
         <h1>Title: {title}</h1>
         <p>Author: {author}</p>
         <p>Description: {description}</p>
-        <h2>Category: {category}</h2>
+        <h4>Category: {category}</h4>
         <img src={image} alt="book" />
-        <p>Available: {isAvailable}</p>
-        <h4>{pdf}</h4>
+        <p>Available: {isAvailable.toString()}</p>
+        <button type="submit">
+          <Link to="/user" state={{ bookId: id }}>
+            Lend
+          </Link>
+        </button>
       </div>
     </>
   );

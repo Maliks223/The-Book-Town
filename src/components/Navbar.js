@@ -14,11 +14,10 @@ const Navbar = () => {
     <>
       <nav>
         <div className="logo">
-          <Link to="/">
-            <h3>The BookTown</h3>
-            <i className="fa-solid fa-book"></i>
-          </Link>
-          
+            <Link onClick={() => setToggle(false)} to="/">
+                <h3>The BookTown</h3>
+                <i className="fa-solid fa-book"></i>
+            </Link>
         </div>
         <ul className={toggle ? "active" : ""}>
           <li>
