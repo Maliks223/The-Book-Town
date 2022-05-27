@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import axios from "axios";
 // import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
+import "./User.css"
 
 const User = () => {
   const location = useLocation();
@@ -47,9 +48,9 @@ const User = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <h1>USER FORM</h1>
+    <div >
+      <form className="form-container" onSubmit={handleSubmit}>
+        <h2>Lend Book</h2>
         <input
           onChange={handleChange}
           value={inputs.name}
@@ -89,7 +90,7 @@ const User = () => {
           name="dateTo"
         />
         <br />
-        <button type="submit">Submit</button>
+        <button onClick={()=>alert("Thank you.Please wait for a confirmation message")} className="submit-btn" type="submit">Submit</button>
       </form>
     </div>
   );

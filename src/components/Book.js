@@ -37,7 +37,7 @@ const Book = ({
             </div>
 
             <p>Available: {isAvailable.toString()}</p>
-            <h4>PDF: {pdf}</h4>
+            <h4>PDF: {}</h4>
             
           </div>
           

@@ -20,7 +20,7 @@ function App() {
     <>
       {/* <Navbar /> */}
       <Router>
-        <Admin />
+        <Navbar />
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<AboutUs />} />
