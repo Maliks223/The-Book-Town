@@ -49,19 +49,19 @@ ul li a {
   font-weight: bolder;
 }
 
-ul li a:hover {
-  color: #dfb646;
+ul li a:hover{
+    color: #57e4b7;
 }
 
-ul li a::after {
-  content: "";
-  position: absolute;
-  height: 0.12rem;
-  width: 0%;
-  left: 0;
-  top: 1.6rem;
-  background-color: #dfb646;
-  transition: width 0.2s linear;
+ul li a::after{
+    content: "";
+    position: absolute;
+    height: 0.12rem;
+    width: 0%;
+    left: 0;
+    top: 1.6rem;
+    background-color: #57e4b7;
+    transition: width 0.2s linear;
 }
 
 ul li a:hover::after {
