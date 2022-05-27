@@ -3,3 +3,13 @@
     padding: 0;
     box-sizing: border-box;
 }
+
+.wrapper {
+    padding: 0 2rem;
+}
+
+@media (min-width: 701px) {
+    .wrapper {
+        padding: 0 4rem;
+    }
+}
