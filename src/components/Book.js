@@ -10,10 +10,7 @@ const Book = ({
   category,
   image,
   isAvailable,
-  pdf,
 }) => {
-
-
   // const handleClick = () => {
   //   // localStorage.setItem("bookId", id);
   // };
