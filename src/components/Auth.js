@@ -4,7 +4,7 @@ import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { authAction } from "../store";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 
 const Auth = () => {
   const navigate = useNavigate();
@@ -51,40 +51,64 @@ const Auth = () => {
     }
   };
   return (
-    <div>
+    <div className="bk-color">
+
+      <div className="center">
       <form onSubmit={handleSubmit}>
-        <div className="logIn">
-          {isSignup ? "Signup" : "Login"}
-          <input
-            onChange={handleChange}
-            value={inputs.name}
-            placeholder="Admin Name"
-            type="text"
-            name="name"
-            id="adminname"
-          />
-          {isSignup && (
-            <input
+      {isSignup ? <h1>Sign Up</h1> : <h1>Login</h1>}
+        <div class="txt_field">
+        
+
+        <input type="text"
+                  onChange={handleChange}
+                  value={inputs.name}
+                  name="name"
+                  id="adminname"
+                  required/>
+          
+           {isSignup && (
+              <input
               onChange={handleChange}
               value={inputs.email}
               placeholder="Admin Email"
               type="email"
               name="email"
               id="adminemail"
-            />
-          )}
-          <input
-            onChange={handleChange}
-            value={inputs.password}
-            placeholder="Password"
-            type="password"
-            name="password"
-            id="password"
-          />
-          <br />
-          <button type="submit">Login</button>
+              />
+           )}
+          <span></span>
+          <label>Admin Name</label>
         </div>
+
+
+        <div class="txt_field">
+          
+          <input onChange={handleChange}
+          value={inputs.password}
+          type="password"
+          name="password"
+          id="password"
+           required/>
+          <span></span>
+          <label>Password</label>
+        </div>
+
+
+
+        {/* <div class="pass">Forgot Password?</div> */}
+
+        <input type="submit" value="Login"/>
+
+        {/* <div class="signup_link">
+           <a href="#">Signup</a>
+        </div> */}
+         <button className="changeto-btn" type="button" onClick={() => setisSignup(!isSignup)}>
+           Change To {isSignup ? "Login" : "Sign Up"}
+        </button> 
+        
       </form>
+      </div>
+
     </div>
   );
 };

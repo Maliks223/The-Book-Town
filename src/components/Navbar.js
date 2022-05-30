@@ -24,8 +24,11 @@ const Navbar = () => {
             <Link onClick={() => setToggle(false)} to="/">
               Home
             </Link>
-          </div>
-          <div>
+          </li>
+          <li>
+                <Link to="/books">All Books</Link>
+          </li>
+          <li>
             <Link onClick={() => setToggle(false)} to="/about">
               About Us
             </Link>
@@ -34,9 +37,17 @@ const Navbar = () => {
             <Link onClick={() => setToggle(false)} to="/contact">
               Contact Us
             </Link>
+<<<<<<< HEAD
           </div>
         </div>
         {/* <div></div> */}
+=======
+          </li>
+          
+        </ul>
+        
+        <div></div>
+>>>>>>> 81c19e11a3f02d41d68d13d9a53df566c217c913
         <div onClick={togglehandler} className="toggle-button">
           <i className={toggle ? "fa-solid fa-xmark" : "fa-solid fa-bars"}></i>
         </div>

@@ -16,8 +16,13 @@ import Navbar from "../src/components/Navbar";
 
 
 function App() {
-  return (<>
+  const isLoggedIn = useSelector((state) => state.isLoggedIn);
+  console.log(isLoggedIn);
+  return (
+    <>
+      {/* <Admin /> */}
       <Router>
+        {/* <Navbar /> */}
         <Admin />
         <Routes>
           <Route exact path="/" element={<Home />} />

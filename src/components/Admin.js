@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "../store";
+import "./Admin.css"
 
 const Admin = () => {
   const dispath = useDispatch();
@@ -57,12 +58,11 @@ const Admin = () => {
           
             <>
               {" "}
-              {/* <button>
-                <Link to="/auth">Login</Link>
-              </button>
-              {/* <button>
-                <Link to="/auth">Signup</Link>
-              // </button> */} 
+              <ul>
+                <li><Link className="login-btn" to="/auth">Login</Link></li>
+                {/* <li><Link className="SignUp-btn" to="/auth">Sign Up</Link></li> */}
+              </ul>
+               
             </>
             
           {isLoggedIn && (
