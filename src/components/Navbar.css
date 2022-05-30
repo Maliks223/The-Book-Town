@@ -1,9 +1,9 @@
 nav{
     display: flex;
-    justify-content: space-between;
+    justify-content: flex-end;
     align-items: center;
     height: 8vh;
-    background-color: dodgerblue;
+    background-color: var(--primary);
     color: #eee;
     padding: 0 4rem;
     position: relative;
@@ -17,6 +17,7 @@ nav{
 
 .logo a {
   display: flex;
+  margin-right: 1080px;
   text-decoration: none;
   color: #eee;
   align-items: center;
@@ -73,6 +74,13 @@ ul li a:hover::after {
   display: none;
 }
 
+@media(max-width:1564px){
+
+  .logo a {
+    display: none;
+    
+  }
+}
 
 @media only screen and (max-width: 700px) {
   nav {

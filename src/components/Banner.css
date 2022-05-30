@@ -9,6 +9,7 @@
     align-items: center ;
     flex-wrap: wrap;
     gap: 1.5rem;
+    margin-bottom: 30px;
 }
 
 .content{
@@ -33,7 +34,7 @@
 }
 
 .books a:hover{
-    transform: scale(.9);
+    transform: scale(.98);
 }
 
 .stand{
@@ -44,13 +45,18 @@
 .btn{
     display: inline-block;
     border-radius:.5rem ;
-    background-color: dodgerblue;
+    background-color:  var(--primary);
     text-decoration: none;
     font-weight: bolder;
     font-size: 1.7rem;
     color: #fff;
     padding: .9rem 3rem;
     margin-top: 1rem;
+}
+.btn:hover{
+    background-color: rgb(0, 125, 251); 
+    box-shadow:  0 0 3px  var(--primary), 0 0 5px  var(--primary);
+
 }
 
 @media screen and (max-width:1371px) {

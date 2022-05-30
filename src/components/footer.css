@@ -1,0 +1,13 @@
+.Ftr{
+    background-color:  var(--primary);
+    height: 150px;
+    margin-top: 20px;
+    padding: 35px;
+    color:white;
+    font-family: Open Sans;
+    font-weight: 300;
+    font-size: 60PX;
+    letter-spacing: 20px;
+    text-align: center;
+    
+}

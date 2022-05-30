@@ -16,11 +16,7 @@ import Navbar from "../src/components/Navbar";
 
 
 function App() {
-  const isLoggedIn = useSelector((state) => state.isLoggedIn);
-  console.log(isLoggedIn);
-  return (
-    <>
-      {/* <Navbar /> */}
+  return (<>
       <Router>
         <Admin />
         <Routes>
@@ -35,7 +31,8 @@ function App() {
           <Route exact path="/user" element={<User />} />
         </Routes>
       </Router>
-    </>
+      </>
+    
   );
 }
 

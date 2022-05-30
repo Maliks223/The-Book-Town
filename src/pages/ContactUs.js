@@ -1,7 +1,6 @@
 import React from "react";
 import ContactUsPage from "../components/contactUsPage";
 
-
 const ContactUs = () => {
   return (
     <div>
@@ -10,4 +9,4 @@ const ContactUs = () => {
   );
 };
 
-export default ContactUs;	
+export default ContactUs;

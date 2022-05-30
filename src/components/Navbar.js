@@ -12,31 +12,31 @@ const Navbar = () => {
 
   return (
     <>
-      <nav>
+      <nav className="navBar">
         <div className="logo">
             <Link onClick={() => setToggle(false)} to="/">
                 <h3>The BookTown</h3>
                 <i className="fa-solid fa-book"></i>
             </Link>
         </div>
-        <ul className={toggle ? "active" : ""}>
-          <li>
+        <div className={toggle ? "active" : ""}>
+          <div>
             <Link onClick={() => setToggle(false)} to="/">
               Home
             </Link>
-          </li>
-          <li>
+          </div>
+          <div>
             <Link onClick={() => setToggle(false)} to="/about">
               About Us
             </Link>
-          </li>
-          <li>
+          </div>
+          <div>
             <Link onClick={() => setToggle(false)} to="/contact">
               Contact Us
             </Link>
-          </li>
-        </ul>
-        <div></div>
+          </div>
+        </div>
+        {/* <div></div> */}
         <div onClick={togglehandler} className="toggle-button">
           <i className={toggle ? "fa-solid fa-xmark" : "fa-solid fa-bars"}></i>
         </div>

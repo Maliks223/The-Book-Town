@@ -19,6 +19,7 @@ const Card = ({title,imageUrl,body}) => {
             
             <div className="btnCard">
                 <button>
+                    
                     <a className="lend">
                         Lend
                     </a>

@@ -20,16 +20,16 @@ const contactUsPage = () => {
             <div className="footerTxt">
                 <h1>GET IN TOUCH</h1>
                 <h3>Hey! We are looking forward<br>
-                </br> for your feedbak!</h3>
+                </br> for your feedback!</h3>
                 <p>
                     Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero possimus sunt quidem necessitatibus incidunt cupiditate nisi, nemo facere qui cum.
                 </p>
 
                 <div className="socials">
-                <SocialMediaIconsReact className='social' borderColor="rgba(243,243,243,0.25)" borderWidth="4" borderStyle="solid" icon="twitter" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(26,166,233,1)" iconSize="7" roundness="50%" url="https://some-website.com/my-social-media-url" size="49" />
-                <SocialMediaIconsReact className='social' borderColor="rgba(243,243,243,0.25)" borderWidth="4" borderStyle="solid" icon="facebook" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(26,166,233,1)" iconSize="7" roundness="50%" url="https://some-website.com/my-social-media-url" size="49" />
-                <SocialMediaIconsReact className='social' borderColor="rgba(243,243,243,0.25)" borderWidth="4" borderStyle="solid" icon="linkedin" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(26,166,233,1)" iconSize="7" roundness="50%" url="https://some-website.com/my-social-media-url" size="49" />
-                <SocialMediaIconsReact className='social' borderColor="rgba(243,243,243,0.25)" borderWidth="4" borderStyle="solid" icon="github" iconColor="rgba(255,255,255,1)" backgroundColor="rgba(26,166,233,1)" iconSize="7" roundness="50%" url="https://some-website.com/my-social-media-url" size="49" />
+                <SocialMediaIconsReact className='social' borderColor="var(--primary)" borderWidth="4" borderStyle="solid" icon="twitter" iconColor="rgba(255,255,255,1)" backgroundColor="var(--primary)" iconSize="7" roundness="50%" url="https://some-website.com/my-social-media-url" size="49" />
+                <SocialMediaIconsReact className='social' borderColor="var(--primary)" borderWidth="4" borderStyle="solid" icon="facebook" iconColor="rgba(255,255,255,1)" backgroundColor="var(--primary)" iconSize="7" roundness="50%" url="https://some-website.com/my-social-media-url" size="49" />
+                <SocialMediaIconsReact className='social' borderColor="var(--primary)" borderWidth="4" borderStyle="solid" icon="linkedin" iconColor="rgba(255,255,255,1)" backgroundColor="var(--primary)" iconSize="7" roundness="50%" url="https://some-website.com/my-social-media-url" size="49" />
+                <SocialMediaIconsReact className='social' borderColor="var(--primary)" borderWidth="4" borderStyle="solid" icon="github" iconColor="rgba(255,255,255,1)" backgroundColor="var(--primary)" iconSize="7" roundness="50%" url="https://some-website.com/my-social-media-url" size="49" />
                 </div>
                 
             </div>
