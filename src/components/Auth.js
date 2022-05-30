@@ -4,9 +4,10 @@ import { useState } from "react";
 import axios from "axios";
 import { useDispatch } from "react-redux";
 import { authAction } from "../store";
-import { useNavigate } from "react-router-dom";
+import { useLocation, useNavigate } from "react-router-dom";
 
 const Auth = () => {
+  const location = useLocation();
   const navigate = useNavigate();
   const dispath = useDispatch(); //to update satet inside redux
   const [inputs, setInputs] = useState({
@@ -14,7 +15,6 @@ const Auth = () => {
     email: "",
     password: "",
   });
-  const [isSignup, setisSignup] = useState(false);
   const handleChange = (e) => {
     setInputs((prevState) => ({
       ...prevState,
@@ -22,11 +22,10 @@ const Auth = () => {
     }));
   };
 
-  const sendRequest = async (type = "login") => {
+  const sendRequest = async () => {
     const res = await axios
-      .post(`http://localhost:3002/admin/${type}`, {
+      .post(`http://localhost:3002/admin/login`, {
         name: inputs.name,
-        email: inputs.email,
         password: inputs.password,
       })
       .catch((err) => console.log(err));
@@ -37,24 +36,16 @@ const Auth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault(); // to prevent send the data to the url
-    console.log(inputs);
-    if (isSignup) {
-      sendRequest("signup")
-        .then(() => dispath(authAction.login()))
-        .then(() => navigate("/books"))
-        .then((data) => console.log(data));
-    } else {
-      sendRequest()
-        .then(() => dispath(authAction.login()))
-        .then(() => navigate("/books"))
-        .then((data) => console.log(data));
-    }
+    sendRequest()
+      .then(() => dispath(authAction.login()))
+      .then(() => navigate("/"));
   };
+
   return (
     <div>
       <form onSubmit={handleSubmit}>
         <div className="logIn">
-          {isSignup ? "Signup" : "Login"}
+          Login
           <input
             onChange={handleChange}
             value={inputs.name}
@@ -63,16 +54,6 @@ const Auth = () => {
             name="name"
             id="adminname"
           />
-          {isSignup && (
-            <input
-              onChange={handleChange}
-              value={inputs.email}
-              placeholder="Admin Email"
-              type="email"
-              name="email"
-              id="adminemail"
-            />
-          )}
           <input
             onChange={handleChange}
             value={inputs.password}

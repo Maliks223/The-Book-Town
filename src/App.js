@@ -15,20 +15,20 @@ import Navbar from "../src/components/Navbar";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
-  console.log(isLoggedIn);
   return (
     <>
       {/* <Navbar /> */}
       <Router>
-        <Admin />
+        {!isLoggedIn && <Navbar />}
+        {isLoggedIn && <Admin />}
         <Routes>
           <Route exact path="/" element={<Home />} />
           <Route exact path="/about" element={<AboutUs />} />
           <Route exact path="/contact" element={<ContactUs />} />
           <Route exact path="/books" element={<Books />} />
-          <Route exact path="/book/add" element={<AddBook />} />
+          <Route exact path="/books/add" element={<AddBook />} />
           <Route exact path="/userBook" element={<UserBook />} />
-          <Route exact path="/userBook/:id" element={<BookDetails />} />
+          <Route exact path="/books/:id" element={<BookDetails />} />
           <Route exact path="/auth/" element={<Auth />} />
           <Route exact path="/user" element={<User />} />
         </Routes>

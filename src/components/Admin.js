@@ -32,6 +32,9 @@ const Admin = () => {
                 <li>
                   <Link to="/userBook">User Books</Link>
                 </li>
+                <li>
+                  <Link to="/books/add">Add Book</Link>
+                </li>
               </ul>
             </div>
           )}
@@ -54,17 +57,16 @@ const Admin = () => {
           </li>
         </ul>
         <div>
-          
-            <>
-              {" "}
-              {/* <button>
+          <>
+            {" "}
+            {/* <button>
                 <Link to="/auth">Login</Link>
               </button>
               {/* <button>
                 <Link to="/auth">Signup</Link>
-              // </button> */} 
-            </>
-            
+              // </button> */}
+          </>
+
           {isLoggedIn && (
             <button onClick={() => dispath(authAction.logout())}>
               <Link to="/auth">Logout</Link>
