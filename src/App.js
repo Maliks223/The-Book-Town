@@ -31,6 +31,7 @@ function App() {
           <Route exact path="/books/:id" element={<BookDetails />} />
           <Route exact path="/auth/" element={<Auth />} />
           <Route exact path="/user" element={<User />} />
+          {/* <Route exact path="/dashboard" element={<Dashboard />} /> */}
         </Routes>
       </Router>
     </>

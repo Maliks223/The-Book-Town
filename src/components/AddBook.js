@@ -38,14 +38,14 @@ const AddBook = () => {
     sendRequest().then(() => history("/books"));
   };
   return (
-    <form onSubmit={handleSubmit}>
+    <form className="form-container"  onSubmit={handleSubmit}>
       <Box
         border={3}
         borderColor={"dodgerblue"}
         borderRadius={5}
         boxShadow={"10px 10px 20px #ccc"}
         padding={3}
-        margin={"auto"}
+        marginLeft={"270px"}
         marginTop={1.25}
         display={"flex"}
         flexDirection={"column"}

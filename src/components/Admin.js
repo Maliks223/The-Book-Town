@@ -1,7 +1,8 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+// import "./Navbar.css";
+import "./Admin.css"
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "../store";
 
@@ -17,14 +18,14 @@ const Admin = () => {
 
   return (
     <>
-      <nav>
-        <div className="logo">
+      <div className="sidebar">
+        <div className="logoo">
           <Link to="/">
-            <h3>The BookTown</h3>
-            <i className="fa-solid fa-book"></i>
+            <h3>Admin</h3>
+            
           </Link>
           {isLoggedIn && (
-            <div>
+            <div className="elt-container">
               <ul>
                 <li>
                   <Link to="/books">All Books</Link>
@@ -39,7 +40,7 @@ const Admin = () => {
             </div>
           )}
         </div>
-        <ul className={toggle ? "active" : ""}>
+        {/* <ul className={toggle ? "active" : ""}>
           <li>
             <Link onClick={() => setToggle(false)} to="/">
               Home
@@ -55,8 +56,8 @@ const Admin = () => {
               Contact Us
             </Link>
           </li>
-        </ul>
-        <div>
+        </ul> */}
+        <div className="logout-container">
           <>
             {" "}
             {/* <button>
@@ -68,15 +69,15 @@ const Admin = () => {
           </>
 
           {isLoggedIn && (
-            <button onClick={() => dispath(authAction.logout())}>
-              <Link to="/auth">Logout</Link>
+            <button className="btn-logoutt"  onClick={() => dispath(authAction.logout())}>
+              <Link className="logout-"   to="/auth">Logout</Link>
             </button>
           )}
         </div>
-        <div onClick={togglehandler} className="toggle-button">
+        {/* <div onClick={togglehandler} className="toggle-button">
           <i className={toggle ? "fa-solid fa-xmark" : "fa-solid fa-bars"}></i>
-        </div>
-      </nav>
+        </div> */}
+      </div>
     </>
   );
 };
