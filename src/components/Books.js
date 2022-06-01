@@ -3,7 +3,6 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Book from "./Book";
 
-
 const Books = () => {
   const [books, setBooks] = useState();
   const sendRequest = async () => {
@@ -14,10 +13,10 @@ const Books = () => {
     const data = await res.data;
     return data;
   };
+
   useEffect(() => {
     sendRequest().then((data) => setBooks(data.books));
   }, []);
-
 
   return (
     <div>
@@ -32,7 +31,7 @@ const Books = () => {
                 author={book.author}
                 description={book.description}
                 category={book.category}
-                image={book.image}
+                image={`http://localhost:3002/${book.image}`}
               />
             )
         )}

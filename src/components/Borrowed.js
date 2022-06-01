@@ -1,10 +1,14 @@
 import React from "react";
 import axios from "axios";
-import Request from "./Request";
-import { useEffect, useState } from "react";
+import { useState, useEffect } from "react";
+import BorrowedBy from "./borrowedBy";
 // import Book from "./Book";
+// import Request from "./Request";
 
-const UserBook = () => {
+// import { useLocation } from "react-router-dom";
+
+const Borrowed = () => {
+  // const location = useLocation();
   const [users, setUsers] = useState();
   const sendRequest = async () => {
     const res = await axios
@@ -22,20 +26,21 @@ const UserBook = () => {
     <div>
       {users &&
         users.map((user) => (
-          <Request
+          <BorrowedBy
             key={user._id}
-            id={user._id}
-            name={user.name}
+            // id={user._id}
+            // name={user.name}
             email={user.email}
             dateFrom={user.dateFrom}
             dateTo={user.dateTo}
             phone={user.phone}
             bookTitle={user.book.title}
             bookId={user.book._id}
-          ></Request>
+            bookImage={user.book.image}
+          ></BorrowedBy>
         ))}
     </div>
   );
 };
 
-export default UserBook;
+export default Borrowed;

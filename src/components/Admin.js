@@ -30,7 +30,10 @@ const Admin = () => {
                   <Link to="/books">All Books</Link>
                 </li>
                 <li>
-                  <Link to="/userBook">User Books</Link>
+                  <Link to="/userBook">User Requests</Link>
+                </li>
+                <li>
+                  <Link to="/books/borrowed">Borrowed Books</Link>
                 </li>
                 <li>
                   <Link to="/books/add">Add Book</Link>

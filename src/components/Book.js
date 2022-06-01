@@ -7,9 +7,7 @@ import { useSelector } from "react-redux";
 import axios from "axios";
 
 const Book = ({ id, title, author, description, category, image }) => {
-  // const handleClick = () => {
-  //   // localStorage.setItem("bookId", id);
-  // };
+
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const handleEdit = (e) => {
@@ -26,6 +24,11 @@ const Book = ({ id, title, author, description, category, image }) => {
     deleteRequest().then(() => window.location.reload(false));
   };
 
+  // const handleAccept = () => {
+  //   acceptRequest()
+  //     .then(() => navigate("/books"));
+  // };
+
   return (
     <>
       <div className="card">
@@ -40,15 +43,18 @@ const Book = ({ id, title, author, description, category, image }) => {
           </Box>
         )}
         <h1>Title: {title}</h1>
+        {/* <h2>Borrowed by: {userEmail}</h2> */}
         <img src={image} alt="book" />
         <p>Author: {author}</p>
         <p>Description: {description}</p>
         <h4>Category: {category}</h4>
-        <button type="submit">
-          <Link to="/user" state={{ bookId: id }}>
-            Lend
-          </Link>
-        </button>
+        {!isLoggedIn && (
+          <button type="submit">
+            <Link to="/user" state={{ bookId: id }}>
+              Lend
+            </Link>
+          </button>
+        )}
       </div>
     </>
   );

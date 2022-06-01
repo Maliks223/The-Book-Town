@@ -1,7 +1,10 @@
 import axios from "axios";
 import React from "react";
+// import { useNavigate } from "react-router-dom";
+import { useState, useEffect } from "react";
 
 const Request = ({
+  id,
   name,
   email,
   phone,
@@ -10,6 +13,17 @@ const Request = ({
   bookTitle,
   bookId,
 }) => {
+  const [show, setShow] = useState(true);
+  useEffect(() => {
+    window.localStorage.setItem("showHide", show);
+  }, [show]);
+
+  useEffect(() => {
+    let data = window.localStorage.getItem("showHide");
+    if (data !== null) setShow(data);
+  }, []);
+
+  // const navigate = useNavigate();
   const acceptRequest = async () => {
     const res = await axios
       .put(`http://localhost:3002/books/update/${bookId}`, {
@@ -20,6 +34,19 @@ const Request = ({
     const data = await res.data;
     return data;
   };
+  const deleteRequest = async () => {
+    const res = await axios
+      .delete(`http://localhost:3002/user/requestDelete/${id}`)
+      .catch((err) => console.log(err));
+    const data = await res.data;
+    return data;
+  };
+  const handleAccept = () => {
+    acceptRequest()
+    // .then(() => navigate("/books/borrowed"));
+    // .then(() => setShow(!show));
+  };
+
   return (
     <div>
       <h2>User Name: {name}</h2>
@@ -30,8 +57,8 @@ const Request = ({
         {dateTo.toString().split("T")[0]}
       </h5>
       <h3>Requested Book: {bookTitle}</h3>
-      <button onClick={acceptRequest}>Accept</button>
-      <button>Reject</button>
+      {show && <button onClick={handleAccept}>Accept</button>}
+      <button onClick={deleteRequest}>Reject</button>
     </div>
   );
 };
