@@ -21,6 +21,11 @@ const Navbar = () => {
         </div>
         <div className={toggle ? "active" : ""}>
           <div>
+          <div>
+              <Link onClick={()=> setToggle(false)} to="/books">
+                All books
+              </Link>
+          </div>
             <Link onClick={() => setToggle(false)} to="/">
               Home
             </Link>
@@ -46,3 +51,5 @@ const Navbar = () => {
 };
 
 export default Navbar;
+
+
