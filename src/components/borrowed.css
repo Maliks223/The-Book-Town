@@ -1,0 +1,9 @@
+.bg-red {
+  /* background-color: rgba(255, 0, 0, 0.5); */
+  background-color: red;
+  color: white;
+}
+
+.expiry{
+    text-align: center;
+}

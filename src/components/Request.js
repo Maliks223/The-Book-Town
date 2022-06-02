@@ -1,7 +1,6 @@
 import axios from "axios";
 import React from "react";
 // import { useNavigate } from "react-router-dom";
-import { useState, useEffect } from "react";
 
 const Request = ({
   id,
@@ -12,17 +11,8 @@ const Request = ({
   dateTo,
   bookTitle,
   bookId,
+  refreshFunc,
 }) => {
-  const [show, setShow] = useState(true);
-  useEffect(() => {
-    window.localStorage.setItem("showHide", show);
-  }, [show]);
-
-  useEffect(() => {
-    let data = window.localStorage.getItem("showHide");
-    if (data !== null) setShow(data);
-  }, []);
-
   // const navigate = useNavigate();
   const acceptRequest = async () => {
     const res = await axios
@@ -34,6 +24,17 @@ const Request = ({
     const data = await res.data;
     return data;
   };
+  const isBorrowed = async () => {
+    const res = await axios
+      .put(`http://localhost:3002/user/update/${id}`, {
+        isBorrow: true,
+      })
+      .catch((err) => console.log(err));
+
+    const data = await res.data;
+    return data;
+  };
+
   const deleteRequest = async () => {
     const res = await axios
       .delete(`http://localhost:3002/user/requestDelete/${id}`)
@@ -43,6 +44,8 @@ const Request = ({
   };
   const handleAccept = () => {
     acceptRequest()
+      .then(() => isBorrowed())
+      .then(() => refreshFunc());
     // .then(() => navigate("/books/borrowed"));
     // .then(() => setShow(!show));
   };
@@ -57,7 +60,7 @@ const Request = ({
         {dateTo.toString().split("T")[0]}
       </h5>
       <h3>Requested Book: {bookTitle}</h3>
-      {show && <button onClick={handleAccept}>Accept</button>}
+      <button onClick={handleAccept}>Accept</button>
       <button onClick={deleteRequest}>Reject</button>
     </div>
   );

@@ -6,8 +6,15 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useSelector } from "react-redux";
 import axios from "axios";
 
-const Book = ({ id, title, author, description, category, image }) => {
-
+const Book = ({
+  id,
+  title,
+  author,
+  description,
+  category,
+  image,
+  refreshFunc,
+}) => {
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const handleEdit = (e) => {
@@ -21,7 +28,7 @@ const Book = ({ id, title, author, description, category, image }) => {
     return data;
   };
   const handleDelete = () => {
-    deleteRequest().then(() => window.location.reload(false));
+    deleteRequest().then(() => refreshFunc());
   };
 
   // const handleAccept = () => {
