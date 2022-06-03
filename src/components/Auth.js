@@ -31,7 +31,7 @@ const Auth = () => {
       .catch((err) => console.log(err));
 
     const data = await res.data;
-    return data;
+    localStorage.setItem('token',data.token)
   };
 
   const handleSubmit = (e) => {

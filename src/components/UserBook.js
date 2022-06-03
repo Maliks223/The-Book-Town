@@ -7,8 +7,12 @@ import { useEffect, useState } from "react";
 const UserBook = () => {
   const [users, setUsers] = useState();
   const sendRequest = async () => {
+    let token = localStorage.getItem("token");
+    const headers = {
+      authorization: `Bearer ${token}`,
+    };
     const res = await axios
-      .get("http://localhost:3002/user")
+      .get("http://localhost:3002/user", { headers: headers })
       .catch((err) => console.log(err));
 
     const data = await res.data;

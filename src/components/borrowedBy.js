@@ -21,18 +21,32 @@ const BorrowedBy = ({ email, bookTitle, bookImage, bookId, dateTo }) => {
 
   const navigate = useNavigate();
   const bookReturned = async () => {
+    let token = localStorage.getItem("token");
+    const headers = {
+      authorization: `Bearer ${token}`,
+    };
     const res = await axios
-      .delete(`http://localhost:3002/user/returned/${bookId}`)
+      .delete(`http://localhost:3002/user/returned/${bookId}`, {
+        headers: headers,
+      })
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;
   };
 
   const acceptRequest = async () => {
+    let token = localStorage.getItem("token");
+    const headers = {
+      authorization: `Bearer ${token}`,
+    };
     const res = await axios
-      .put(`http://localhost:3002/books/update/${bookId}`, {
-        isAvailable: true,
-      })
+      .put(
+        `http://localhost:3002/books/update/${bookId}`,
+        {
+          isAvailable: true,
+        },
+        { headers: headers }
+      )
       .catch((err) => console.log(err));
 
     const data = await res.data;

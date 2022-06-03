@@ -15,20 +15,36 @@ const Request = ({
 }) => {
   // const navigate = useNavigate();
   const acceptRequest = async () => {
+    let token = localStorage.getItem("token");
+    const headers = {
+      authorization: `Bearer ${token}`,
+    };
     const res = await axios
-      .put(`http://localhost:3002/books/update/${bookId}`, {
-        isAvailable: false,
-      })
+      .put(
+        `http://localhost:3002/books/update/${bookId}`,
+        {
+          isAvailable: false,
+        },
+        { headers: headers }
+      )
       .catch((err) => console.log(err));
 
     const data = await res.data;
     return data;
   };
   const isBorrowed = async () => {
+    let token = localStorage.getItem("token");
+    const headers = {
+      authorization: `Bearer ${token}`,
+    };
     const res = await axios
-      .put(`http://localhost:3002/user/update/${id}`, {
-        isBorrow: true,
-      })
+      .put(
+        `http://localhost:3002/user/update/${id}`,
+        {
+          isBorrow: true,
+        },
+        { headers: headers }
+      )
       .catch((err) => console.log(err));
 
     const data = await res.data;
@@ -36,8 +52,14 @@ const Request = ({
   };
 
   const deleteRequest = async () => {
+    let token = localStorage.getItem("token");
+    const headers = {
+      authorization: `Bearer ${token}`,
+    };
     const res = await axios
-      .delete(`http://localhost:3002/user/requestDelete/${id}`)
+      .delete(`http://localhost:3002/user/requestDelete/${id}`, {
+        headers: headers,
+      })
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;

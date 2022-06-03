@@ -14,6 +14,9 @@ const Admin = () => {
   const togglehandler = () => {
     setToggle(!toggle);
   };
+  const logOut = () => {
+    localStorage.clear();
+  };
 
   return (
     <>
@@ -71,7 +74,12 @@ const Admin = () => {
           </>
 
           {isLoggedIn && (
-            <button onClick={() => dispath(authAction.logout())}>
+            <button
+              onClick={() => {
+                dispath(authAction.logout());
+                logOut()
+              }}
+            >
               <Link to="/auth">Logout</Link>
             </button>
           )}

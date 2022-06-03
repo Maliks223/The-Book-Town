@@ -20,9 +20,14 @@ const Book = ({
   const handleEdit = (e) => {
     navigate(`/books/${id}`);
   };
+
   const deleteRequest = async () => {
+    let token = localStorage.getItem("token");
+    const headers = {
+      authorization: `Bearer ${token}`,
+    };
     const res = await axios
-      .delete(`http://localhost:3002/books/delete/${id}`)
+      .delete(`http://localhost:3002/books/delete/${id}`, { headers: headers })
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;

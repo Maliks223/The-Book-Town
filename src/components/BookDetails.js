@@ -36,14 +36,22 @@ const BookDetails = () => {
     });
   }, [id]);
   const sendRequest = async () => {
+    let token = localStorage.getItem("token");
+    const headers = {
+      authorization: `Bearer ${token}`,
+    };
     const res = await axios
-      .put(`http://localhost:3002/books/update/${id}`, {
-        title: inputs.title,
-        author: inputs.author,
-        description: inputs.description,
-        category: inputs.category,
-        image: inputs.image,
-      })
+      .put(
+        `http://localhost:3002/books/update/${id}`,
+        {
+          title: inputs.title,
+          author: inputs.author,
+          description: inputs.description,
+          category: inputs.category,
+          image: inputs.image,
+        },
+        { headers: headers }
+      )
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;

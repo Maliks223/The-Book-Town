@@ -21,14 +21,25 @@ const AddBook = () => {
     }));
   };
   const sendRequest = async () => {
+    let token = localStorage.getItem("token");
+    const headers = {
+      authorization: `Bearer ${token}`,
+    };
+    // console.log(token);
+    // const myHeaders = new Headers();
+    // myHeaders.append("authorization", `Bearer ${token}`);
     const res = await axios
-      .post("http://localhost:3002/books/add", {
-        title: inputs.title,
-        author: inputs.author,
-        description: inputs.description,
-        category: inputs.category,
-        image: inputs.image,
-      })
+      .post(
+        "http://localhost:3002/books/add",
+        {
+          title: inputs.title,
+          author: inputs.author,
+          description: inputs.description,
+          category: inputs.category,
+          image: inputs.image,
+        },
+        { headers: headers }
+      )
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;

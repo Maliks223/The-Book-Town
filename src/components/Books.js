@@ -40,7 +40,11 @@ const Books = () => {
       >
         {firstData &&
           firstData.map((book) => {
-            return <MenuItem onClick={filterCat}>{book.category}</MenuItem>;
+            return (
+              <MenuItem key={book._id} onClick={filterCat}>
+                {book.category}
+              </MenuItem>
+            );
           })}
         <MenuItem onClick={clear}>All Books</MenuItem>
       </TextField>
