@@ -45,7 +45,7 @@ const AddBook = () => {
         borderRadius={5}
         boxShadow={"10px 10px 20px #ccc"}
         padding={3}
-        marginLeft={"270px"}
+        marginLeft={"300px"}
         marginTop={1.25}
         display={"flex"}
         flexDirection={"column"}

@@ -34,6 +34,9 @@ const Admin = () => {
                   <Link to="/userBook">User Books</Link>
                 </li>
                 <li>
+                  <Link to="/books/borrowed">Borrowed Books</Link>
+                </li>
+                <li>
                   <Link to="/books/add">Add Book</Link>
                 </li>
               </ul>

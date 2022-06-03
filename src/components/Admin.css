@@ -83,3 +83,9 @@ ul li a::after {
     margin-left: 20px;
     transition: 0.4s;
 }
+
+@media only screen and (max-width: 652px) {
+    .sidebar{
+        width: 125px;
+    }
+  }

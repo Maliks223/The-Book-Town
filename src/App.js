@@ -12,6 +12,7 @@ import Auth from "../src/components/Auth";
 import { useSelector } from "react-redux";
 import User from "../src/components/User";
 import Navbar from "../src/components/Navbar";
+import Borrowed from "./components/Borrowed";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
@@ -29,6 +30,7 @@ function App() {
           <Route exact path="/books/add" element={<AddBook />} />
           <Route exact path="/userBook" element={<UserBook />} />
           <Route exact path="/books/:id" element={<BookDetails />} />
+          <Route exact path="/books/borrowed" element={<Borrowed />} />
           <Route exact path="/auth/" element={<Auth />} />
           <Route exact path="/user" element={<User />} />
           {/* <Route exact path="/dashboard" element={<Dashboard />} /> */}

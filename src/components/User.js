@@ -36,8 +36,11 @@ const User = () => {
       })
       .catch((err) => console.log(err));
 
-    const data = await res.data;
-    return data;
+      const data = await res.data;
+      if (data.status === 404) {
+        alert(data.message);
+      }
+  
   };
 
   const handleSubmit = (e) => {

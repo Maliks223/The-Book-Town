@@ -12,27 +12,33 @@ const UserBook = () => {
       .catch((err) => console.log(err));
 
     const data = await res.data;
-    return data;
+    setUsers(data.users);
   };
   useEffect(() => {
-    sendRequest().then((data) => setUsers(data.users));
+    sendRequest();
   }, []);
-  console.log(users);
+
   return (
     <div>
       {users &&
-        users.map((user) => (
-          <Request
-            key={user._id}
-            name={user.name}
-            email={user.email}
-            dateFrom={user.dateFrom}
-            dateTo={user.dateTo}
-            phone={user.phone}
-            bookTitle={user.book.title}
-            bookId={user.book._id}
-          ></Request>
-        ))}
+        users.map(
+          (user) =>
+            user.isBorrow || (
+              <Request
+                key={user._id}
+                id={user._id}
+                name={user.name}
+                email={user.email}
+                dateFrom={user.dateFrom}
+                dateTo={user.dateTo}
+                phone={user.phone}
+                borrowed={user.isBorrow}
+                bookTitle={user.book.title}
+                bookId={user.book._id}
+                refreshFunc={sendRequest}
+              ></Request>
+            )
+        )}
     </div>
   );
 };
