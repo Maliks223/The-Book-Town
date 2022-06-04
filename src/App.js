@@ -13,6 +13,8 @@ import { useSelector } from "react-redux";
 import User from "../src/components/User";
 import Navbar from "../src/components/Navbar";
 import Borrowed from "./components/Borrowed";
+import ContactMsg from "./components/ContactMsg";
+import BannerTitle from "./components/BannerTitle";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
@@ -33,7 +35,9 @@ function App() {
           <Route exact path="/books/borrowed" element={<Borrowed />} />
           <Route exact path="/auth/" element={<Auth />} />
           <Route exact path="/user" element={<User />} />
-          {/* <Route exact path="/dashboard" element={<Dashboard />} /> */}
+           <Route exact path="/contactUsMessages" element={<ContactMsg/>} />
+           <Route exact path="/BannerTitle" element={<BannerTitle/>} />
+
         </Routes>
       </Router>
     </>

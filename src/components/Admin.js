@@ -39,6 +39,12 @@ const Admin = () => {
                 <li>
                   <Link to="/books/add">Add Book</Link>
                 </li>
+                <li>
+                  <Link to="/contactUsMessages">ContactUs Messages</Link>
+                </li>
+                <li>
+                  <Link to="/BannerTitle">Banner Title</Link>
+                </li>
               </ul>
             </div>
           )}
