@@ -6,6 +6,8 @@ import book1 from "../assets/book-1.png";
 import book2 from "../assets/book-10.png";
 import book3 from "../assets/book5.png";
 import Footer from "../components/footer";
+import axios from "axios";
+import Book from "../components/Book";
 
 const breakPoints = [
   { width: 576, itemsToShow: 1 },
@@ -14,53 +16,62 @@ const breakPoints = [
   { width: 1200, itemsToShow: 4 },
   { width: 1400, itemsToShow: 4 },
 ];
-const book = {
-  title: "Card Title",
-  imageUrl: book1,
-  body: "body",
-};
+
 const Home = () => {
-    const [books, setBooks] = useState([])
-    const [loading, setLoading] = useState({
-        status: true,
-        msg: 'Loading'
+  const [books, setBooks] = useState([]);
+  const [loading, setLoading] = useState({
+    status: true,
+    msg: "Loading",
+  });
+
+  useEffect(() => {
+    setLoading({
+      status: true,
+      msg: "Loading...",
     });
-    
-    useEffect(() => {
-        setLoading({
-            status: true,
-            msg: 'Fetching Books...'
-        })
-        setTimeout(() => {
-            setBooks([book, book, book, book, book, book, book])
-            setLoading({
-                status: false,
-                msg: 'Loading...',
-            });
-        }, 1000);
-    }, [])
+    setTimeout(() => {
+      setLoading({
+        status: false,
+        msg: "Loading...",
+      });
+      sendRequest();
+    }, 500);
+  }, []);
+  const sendRequest = async () => {
+    const res = await axios
+      .get("http://localhost:3002/books")
+      .catch((err) => console.log(err));
+
+    const data = await res.data;
+
+    setBooks(data.books);
+  };
   return (
     <>
       <Banner />
       <div className="card-flex">
-        {loading.status ? <div>{loading.msg}</div> : 
-        <Carousel
-          className="carousel"
-          pagination={false}
-          breakPoints={breakPoints}
-        >
-          {books.map((book, index) => {
-            return (
-              <Card
-              key={index}
-                title={book.title}
-                imageUrl={book.imageUrl}
-                body={book.body}
-              />
-            );
-          })}
-        </Carousel>
-}
+        {loading.status ? (
+          <div>{loading.msg}</div>
+        ) : (
+          <Carousel
+            className="carousel"
+            pagination={false}
+            breakPoints={breakPoints}
+          >
+            {books.map((book) => {
+              return (
+                <Book
+                  key={book._id}
+                  author={book.author}
+                  description={book.description}
+                  category={book.category}
+                  image={book.image}
+                  title={book.title}
+                />
+              );
+            })}
+          </Carousel>
+        )}
       </div>
       <Footer />
     </>

@@ -80,6 +80,7 @@ h3,p{
 .btnCard{
     display: flex;
     justify-content: center; 
+    color: red;
 }
 
 .btnCard button{

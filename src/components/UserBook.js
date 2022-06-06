@@ -2,36 +2,47 @@ import React from "react";
 import axios from "axios";
 import Request from "./Request";
 import { useEffect, useState } from "react";
-import Book from "./Book";
+// import Book from "./Book";
 
 const UserBook = () => {
   const [users, setUsers] = useState();
   const sendRequest = async () => {
+    let token = localStorage.getItem("token");
+    const headers = {
+      authorization: `Bearer ${token}`,
+    };
     const res = await axios
-      .get("http://localhost:3002/user")
+      .get("http://localhost:3002/user", { headers: headers })
       .catch((err) => console.log(err));
 
     const data = await res.data;
-    return data;
+    setUsers(data.users);
   };
   useEffect(() => {
-    sendRequest().then((data) => setUsers(data.users));
+    sendRequest();
   }, []);
-  console.log(users);
+
   return (
     <div>
       {users &&
-        users.map((user) => (
-          <Request
-            key={user._id}
-            name={user.name}
-            email={user.email}
-            dateFrom={user.dateFrom}
-            dateTo={user.dateTo}
-            phone={user.phone}
-            bookTitle={user.book.title}
-          ></Request>
-        ))}
+        users.map(
+          (user) =>
+            user.isBorrow || (
+              <Request
+                key={user._id}
+                id={user._id}
+                name={user.name}
+                email={user.email}
+                dateFrom={user.dateFrom}
+                dateTo={user.dateTo}
+                phone={user.phone}
+                borrowed={user.isBorrow}
+                bookTitle={user.book.title}
+                bookId={user.book._id}
+                refreshFunc={sendRequest}
+              ></Request>
+            )
+        )}
     </div>
   );
 };
