@@ -11,7 +11,7 @@ const Auth = () => {
   const dispath = useDispatch(); //to update satet inside redux
   const [inputs, setInputs] = useState({
     name: "",
-    email: "",
+    // email: "",
     password: "",
   });
   const [isSignup, setisSignup] = useState(false);

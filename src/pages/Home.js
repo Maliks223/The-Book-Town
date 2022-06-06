@@ -37,7 +37,7 @@ const Home = () => {
                 status: false,
                 msg: 'Loading...',
             });
-        }, 1000);
+        }, 500);
     }, [])
   return (
     <>
