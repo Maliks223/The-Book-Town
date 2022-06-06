@@ -1,10 +1,6 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "react-elastic-carousel";
 import Banner from "../components/Banner";
-import Card from "../components/Card";
-import book1 from "../assets/book-1.png";
-import book2 from "../assets/book-10.png";
-import book3 from "../assets/book5.png";
 import Footer from "../components/footer";
 import axios from "axios";
 import Book from "../components/Book";

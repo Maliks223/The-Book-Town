@@ -1,7 +1,9 @@
 
+
 .wrapper{
     padding: 0%;
     background-color: rgb(219, 219, 219);
+    overflow: hidden;
 }
 .form{
     display: flex;

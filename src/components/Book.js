@@ -55,7 +55,7 @@ const Book = ({
           </Box>
         )}
         
-        <img src={`http://localhost:3002/${image}`} />
+        <img alt="" src={`http://localhost:3002/${image}`} />
         <div className="card-content">
         <div className="card-body">
           <h1>Title: {title}</h1>

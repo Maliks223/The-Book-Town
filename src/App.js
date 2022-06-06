@@ -14,20 +14,16 @@ import { useSelector } from "react-redux";
 import User from "../src/components/User";
 import Navbar from "../src/components/Navbar";
 
-
 function App() {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
-  console.log(isLoggedIn);
   return (
     <>
       {/* <Admin /> */}
       <Router>
-      {!isLoggedIn && <Navbar />}
+        {!isLoggedIn && <Navbar />}
         {isLoggedIn && <Admin />}
-        {/* <Navbar /> */}
-        {/* <Admin /> */}
         <Routes>
-        <Route exact path="/" element={<Home />} />{" "}
+          <Route exact path="/" element={<Home />} />{" "}
           {/* <Route exact path="/books/borrowed" element={<Borrowed />} /> */}
           <Route exact path="/about" element={<AboutUs />} />
           <Route exact path="/contact" element={<ContactUs />} />
@@ -40,8 +36,7 @@ function App() {
           <Route exact path="/user" element={<User />} />
         </Routes>
       </Router>
-      </>
-    
+    </>
   );
 }
 
