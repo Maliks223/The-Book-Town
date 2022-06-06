@@ -52,7 +52,8 @@ const User = () => {
     <div className="User-form">
       <form onSubmit={handleSubmit} className="user__form">
         <h1 className="User-h1">USER FORM</h1>
-        <input className="User-input"
+        <input
+          className="User-input"
           onChange={handleChange}
           value={inputs.name}
           type="text"
@@ -60,7 +61,8 @@ const User = () => {
           name="name"
         />
         <br />
-        <input className="User-input"
+        <input
+          className="User-input"
           onChange={handleChange}
           value={inputs.email}
           type="email"
@@ -68,7 +70,8 @@ const User = () => {
           name="email"
         />
         <br />
-        <input className="User-input"
+        <input
+          className="User-input"
           onChange={handleChange}
           value={inputs.phone}
           type="text"
@@ -78,6 +81,7 @@ const User = () => {
         <br />
         <label className="User-label">From: </label>&nbsp;&nbsp;
         <input
+          className="User-date"
           onChange={handleChange}
           value={inputs.dateFrom}
           type="date"
@@ -85,15 +89,17 @@ const User = () => {
         />
         &nbsp;<label className="User-label"> To: </label>&nbsp;&nbsp;
         <input
+          className="User-date"
           onChange={handleChange}
           value={inputs.dateTo}
           type="date"
           name="dateTo"
         />
         <br />
-        <button className="User-submit" type="submit">Submit</button>
+        <button className="User-submit" type="submit">
+          Submit
+        </button>
       </form>
-      
     </div>
   );
 };

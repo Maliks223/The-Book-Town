@@ -1,5 +1,5 @@
 .user__form{
-    margin-left: -30%;
+    margin-left: -50%;
     margin-top: 20%;
 }
 
@@ -10,9 +10,9 @@
 .User-form{
     display: flex;
     justify-content: center;
-    background-image: url(https://media.istockphoto.com/photos/abstract-blurred-public-library-interior-space-blurry-room-with-by-picture-id1132077472?k=20&m=1132077472&s=612x612&w=0&h=T94Q_dUWpSvJ0YooB2jVcZq_ATpXCwqiH4ehyBf7uhk=);
+    background-image: url(https://images.unsplash.com/photo-1527176930608-09cb256ab504?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80);
     background-size: cover;
-    height: 93vh;
+    height: 92vh;
 }
 
 .User-input{
@@ -24,6 +24,12 @@
     border: none;
     border-bottom: 2px solid dodgerblue;
     display: block;
+    background-color: transparent;
+}
+
+.User-date{
+    border: none;
+    color: grey;
 }
 
 .User-label{
