@@ -36,7 +36,7 @@ const Home = () => {
                 msg: 'Loading...',
             });
             sendRequest()
-        }, 500);
+        }, 300);
     }, [])
     const sendRequest = async () => {
       const res = await axios

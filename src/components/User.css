@@ -1,0 +1,58 @@
+.User-h1{
+    color: dodgerblue;
+}
+
+.User-form{
+    display: flex;
+    justify-content: center;
+    margin-top: 1%;
+}
+
+.User-input{
+    width: 80%;
+    padding: 12px 20px;
+    outline: none;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid dodgerblue;
+    display: block;
+}
+
+.User-label{
+    color: dodgerblue;
+    font-weight: bold;
+}
+
+.User-submit{
+    display: inline-block;
+    margin-top: 20px;
+    background-color: dodgerblue;
+    color: white;
+    width: 7rem;
+    padding: 0.9rem 1.5rem;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+.Book-btn{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+}
+
+.Book-button{
+    margin: 0 auto;
+    display: block;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    width: 100px;
+    border: none;
+    outline: none;
+    background-color: dodgerblue;
+}
