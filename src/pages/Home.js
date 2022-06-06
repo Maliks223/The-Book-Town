@@ -6,6 +6,8 @@ import book1 from "../assets/book-1.png";
 import book2 from "../assets/book-10.png";
 import book3 from "../assets/book5.png";
 import Footer from "../components/footer";
+import axios from "axios";
+import Book from "../components/Book";
 
 const breakPoints = [
   { width: 576, itemsToShow: 1 },
@@ -14,11 +16,7 @@ const breakPoints = [
   { width: 1200, itemsToShow: 4 },
   { width: 1400, itemsToShow: 4 },
 ];
-const book = {
-  title: "Card Title",
-  imageUrl: book1,
-  body: "body",
-};
+
 const Home = () => {
     const [books, setBooks] = useState([])
     const [loading, setLoading] = useState({
@@ -32,13 +30,23 @@ const Home = () => {
             msg: 'Fetching Books...'
         })
         setTimeout(() => {
-            setBooks([book, book, book, book, book, book, book])
+            // setBooks([book, book, book, book, book, book, book])
             setLoading({
                 status: false,
                 msg: 'Loading...',
             });
+            sendRequest()
         }, 500);
     }, [])
+    const sendRequest = async () => {
+      const res = await axios
+        .get("http://localhost:3002/books")
+        .catch((err) => console.log(err));
+  
+      const data = await res.data;
+  
+      setBooks(data.books);
+    };
   return (
     <>
       <Banner />
@@ -51,11 +59,15 @@ const Home = () => {
         >
           {books.map((book, index) => {
             return (
-              <Card
-              key={index}
-                title={book.title}
-                imageUrl={book.imageUrl}
-                body={book.body}
+              <Book
+             
+              key={book._id}
+              author={book.author}
+              description={book.description}
+              category={'action'}
+           
+                image={book.image}
+                
               />
             );
           })}

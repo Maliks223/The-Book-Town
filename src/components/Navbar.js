@@ -15,20 +15,22 @@ const Navbar = () => {
       <nav className="navBar">
         <div className="logo">
             <Link onClick={() => setToggle(false)} to="/">
-                <h3>The BookTown</h3>
+                <h3 className="bookT">The BookTown</h3>
                 <i className="fa-solid fa-book"></i>
             </Link>
-        </div>
+        </div >
         <div className={toggle ? "active" : ""}>
+          <div className="navbar">
           <div>
+         
+            <Link onClick={() => setToggle(false)} to="/">
+              Home
+            </Link>
+          </div>
           <div>
               <Link onClick={()=> setToggle(false)} to="/books">
                 All books
               </Link>
-          </div>
-            <Link onClick={() => setToggle(false)} to="/">
-              Home
-            </Link>
           </div>
           <div>
             <Link onClick={() => setToggle(false)} to="/about">
@@ -39,6 +41,7 @@ const Navbar = () => {
             <Link onClick={() => setToggle(false)} to="/contact">
               Contact Us
             </Link>
+          </div>
           </div>
         </div>
         {/* <div></div> */}
