@@ -1,0 +1,65 @@
+.user__form{
+    margin-left: -30%;
+    margin-top: 20%;
+}
+
+.User-h1{
+    color: dodgerblue;
+}
+
+.User-form{
+    display: flex;
+    justify-content: center;
+    background-image: url(https://media.istockphoto.com/photos/abstract-blurred-public-library-interior-space-blurry-room-with-by-picture-id1132077472?k=20&m=1132077472&s=612x612&w=0&h=T94Q_dUWpSvJ0YooB2jVcZq_ATpXCwqiH4ehyBf7uhk=);
+    background-size: cover;
+    height: 93vh;
+}
+
+.User-input{
+    width: 80%;
+    padding: 12px 20px;
+    outline: none;
+    margin: 8px 0;
+    box-sizing: border-box;
+    border: none;
+    border-bottom: 2px solid dodgerblue;
+    display: block;
+}
+
+.User-label{
+    color: dodgerblue;
+    font-weight: bold;
+}
+
+.User-submit{
+    display: inline-block;
+    margin-top: 20px;
+    background-color: dodgerblue;
+    color: white;
+    width: 7rem;
+    padding: 0.9rem 1.5rem;
+    border-radius: 16px;
+    font-size: 16px;
+    font-weight: bold;
+    cursor: pointer;
+    
+}
+
+.Book-btn{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    padding: 5px;
+}
+
+.Book-button{
+    margin: 0 auto;
+    display: block;
+    border-radius: 16px;
+    margin-bottom: 10px;
+    width: 100px;
+    border: none;
+    outline: none;
+    background-color: dodgerblue;
+}

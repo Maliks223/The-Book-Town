@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import axios from "axios";
+import "./User.css"
 // import { useNavigate } from "react-router-dom";
 import { useLocation } from "react-router-dom";
 
@@ -48,10 +49,10 @@ const User = () => {
   };
 
   return (
-    <div>
-      <form onSubmit={handleSubmit}>
-        <h1>USER FORM</h1>
-        <input
+    <div className="User-form">
+      <form onSubmit={handleSubmit} className="user__form">
+        <h1 className="User-h1">USER FORM</h1>
+        <input className="User-input"
           onChange={handleChange}
           value={inputs.name}
           type="text"
@@ -59,7 +60,7 @@ const User = () => {
           name="name"
         />
         <br />
-        <input
+        <input className="User-input"
           onChange={handleChange}
           value={inputs.email}
           type="email"
@@ -67,7 +68,7 @@ const User = () => {
           name="email"
         />
         <br />
-        <input
+        <input className="User-input"
           onChange={handleChange}
           value={inputs.phone}
           type="text"
@@ -75,14 +76,14 @@ const User = () => {
           name="phone"
         />
         <br />
-        <label>From: </label>
+        <label className="User-label">From: </label>&nbsp;&nbsp;
         <input
           onChange={handleChange}
           value={inputs.dateFrom}
           type="date"
           name="dateFrom"
         />
-        <label> To: </label>
+        &nbsp;<label className="User-label"> To: </label>&nbsp;&nbsp;
         <input
           onChange={handleChange}
           value={inputs.dateTo}
@@ -90,8 +91,9 @@ const User = () => {
           name="dateTo"
         />
         <br />
-        <button type="submit">Submit</button>
+        <button className="User-submit" type="submit">Submit</button>
       </form>
+      
     </div>
   );
 };
