@@ -61,7 +61,7 @@ const Book = ({
           <h1>Title: {title}</h1>
           <p className="Book-CardDetail">Author: {author}</p>
           <p>Description: {description}</p>
-          <h4>Category: {category.title}</h4>
+          <h4>Category: {category}</h4>
           </div>
         </div>
         {!isLoggedIn && (
