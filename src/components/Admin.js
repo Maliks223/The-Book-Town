@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Admin.css";
+// import "./Admin.css";
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "../store";
 
@@ -76,13 +76,16 @@ const Admin = () => {
           </>
           <div className="logout-container">
             {isLoggedIn && (
-              <button className="btn-logoutt"
+              <button
+                className="btn-logoutt"
                 onClick={() => {
                   dispath(authAction.logout());
                   logOut();
                 }}
               >
-                <Link className="logout-" to="/auth">Logout</Link>
+                <Link className="logout-" to="/auth">
+                  Logout
+                </Link>
               </button>
             )}
           </div>
