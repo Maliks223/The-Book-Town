@@ -1,7 +1,7 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-import "./Navbar.css";
+import "./Admin.css";
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "../store";
 
@@ -21,29 +21,31 @@ const Admin = () => {
   return (
     <>
       <nav>
-        <div className="logo">
-          <Link to="/">
-            <h3>The BookTown</h3>
-            <i className="fa-solid fa-book"></i>
-          </Link>
-          {isLoggedIn && (
-            <div>
-              <ul>
-                <li>
-                  <Link to="/books">All Books</Link>
-                </li>
-                <li>
-                  <Link to="/userBook">User Requests</Link>
-                </li>
-                <li>
-                  <Link to="/books/borrowed">Borrowed Books</Link>
-                </li>
-                <li>
-                  <Link to="/books/add">Add Book</Link>
-                </li>
-              </ul>
-            </div>
-          )}
+        <div className="sidebar">
+          <div className="logoo">
+            <Link to="/">
+              <h3>The BookTown</h3>
+              <i className="fa-solid fa-book"></i>
+            </Link>
+            {isLoggedIn && (
+              <div className="elt-container">
+                <ul>
+                  <li>
+                    <Link to="/books">All Books</Link>
+                  </li>
+                  <li>
+                    <Link to="/userBook">User Requests</Link>
+                  </li>
+                  <li>
+                    <Link to="/books/borrowed">Borrowed Books</Link>
+                  </li>
+                  <li>
+                    <Link to="/books/add">Add Book</Link>
+                  </li>
+                </ul>
+              </div>
+            )}
+          </div>
         </div>
         <ul className={toggle ? "active" : ""}>
           <li>
@@ -72,17 +74,18 @@ const Admin = () => {
                 <Link to="/auth">Signup</Link>
               // </button> */}
           </>
-
-          {isLoggedIn && (
-            <button
-              onClick={() => {
-                dispath(authAction.logout());
-                logOut()
-              }}
-            >
-              <Link to="/auth">Logout</Link>
-            </button>
-          )}
+          <div className="logout-container">
+            {isLoggedIn && (
+              <button className="btn-logoutt"
+                onClick={() => {
+                  dispath(authAction.logout());
+                  logOut();
+                }}
+              >
+                <Link className="logout-" to="/auth">Logout</Link>
+              </button>
+            )}
+          </div>
         </div>
         <div onClick={togglehandler} className="toggle-button">
           <i className={toggle ? "fa-solid fa-xmark" : "fa-solid fa-bars"}></i>

@@ -10,11 +10,15 @@ const BookDetails = () => {
   const id = useParams().id;
   const [book, setBook] = useState();
   const [inputs, setInputs] = useState();
+  const [image, setImage] = useState(null);
   const handleChange = (e) => {
     setInputs((prevState) => ({
       ...prevState,
       [e.target.name]: e.target.value,
     }));
+  };
+  const handleFileChange = (e) => {
+    setImage(e.target.files[0]);
   };
   const fetchDetails = async () => {
     const res = await axios
@@ -36,22 +40,22 @@ const BookDetails = () => {
     });
   }, [id]);
   const sendRequest = async () => {
+    const formData = new FormData();
+    formData.append("title", inputs.title);
+    formData.append("author", inputs.author);
+    formData.append("description", inputs.description);
+    formData.append("category", inputs.category);
+    formData.append("image", image);
+    // for (var value of formData.values()) {
+    //   console.log(value);}
     let token = localStorage.getItem("token");
     const headers = {
       authorization: `Bearer ${token}`,
     };
     const res = await axios
-      .put(
-        `http://localhost:3002/books/update/${id}`,
-        {
-          title: inputs.title,
-          author: inputs.author,
-          description: inputs.description,
-          category: inputs.category,
-          image: inputs.image,
-        },
-        { headers: headers }
-      )
+      .put(`http://localhost:3002/books/update/${id}`, formData, {
+        headers: headers,
+      })
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;
@@ -119,13 +123,7 @@ const BookDetails = () => {
               variant="outlined"
             />
             <InputLabel sx={labelStyles}>Image</InputLabel>
-            <TextField
-              name="image"
-              onChange={handleChange}
-              value={inputs.image}
-              margin="auto"
-              variant="outlined"
-            />
+            <input type="file" name="image" onChange={handleFileChange} />
             <Button
               sx={{ mt: 1.5, borderRadius: 4 }}
               variant="contained"

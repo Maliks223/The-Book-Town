@@ -1,10 +1,7 @@
-
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-
-
 
 const Navbar = (props) => {
   const [toggle, setToggle] = useState(false);
@@ -46,7 +43,6 @@ const Navbar = (props) => {
             </Link>
           </li>
         </ul>
-        <div></div>
         <div onClick={togglehandler} className="toggle-button">
           <i className={toggle ? "fa-solid fa-xmark" : "fa-solid fa-bars"}></i>
         </div>

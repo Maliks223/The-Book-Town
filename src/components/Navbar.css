@@ -15,12 +15,12 @@ nav {
   align-items: center;
 }
 
-.logo a {
+/* .logo a {
   display: flex;
   text-decoration: none;
   color: #eee;
   align-items: center;
-}
+} */
 
 .logo i {
   margin-left: 0.7rem;
@@ -40,14 +40,14 @@ ul {
 ul li {
   margin: 0 1rem;
 }
-
+/* 
 ul li a {
   text-decoration: none;
   display: block;
   color: #eee;
   position: relative;
   font-weight: bolder;
-}
+} */
 
 ul li a:hover {
   color: #dfb646;

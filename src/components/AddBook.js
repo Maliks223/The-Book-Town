@@ -7,12 +7,12 @@ import axios from "axios";
 const labelStyles = { mb: 1, mt: 2, fontSize: "24px", fontWeight: "bold" };
 const AddBook = () => {
   const history = useNavigate();
+  const [image, setImage] = useState(null);
   const [inputs, setInputs] = useState({
     title: "",
     author: "",
     description: "",
     category: "",
-    image: "",
   });
   const handleChange = (e) => {
     setInputs((prevState) => ({
@@ -20,26 +20,27 @@ const AddBook = () => {
       [e.target.name]: e.target.value,
     }));
   };
+  const handleFileChange = (e) => {
+    setImage(e.target.files[0]);
+  };
   const sendRequest = async () => {
+    const formData = new FormData();
+    formData.append("title", inputs.title);
+    formData.append("author", inputs.author);
+    formData.append("description", inputs.description);
+    formData.append("category", inputs.category);
+    formData.append("image", image);
+    // for (var value of formData.values()) {
+    //   console.log(value);
+    // }
     let token = localStorage.getItem("token");
     const headers = {
       authorization: `Bearer ${token}`,
     };
-    // console.log(token);
-    // const myHeaders = new Headers();
-    // myHeaders.append("authorization", `Bearer ${token}`);
+    const myHeaders = new Headers();
+    myHeaders.append("authorization", `Bearer ${token}`);
     const res = await axios
-      .post(
-        "http://localhost:3002/books/add",
-        {
-          title: inputs.title,
-          author: inputs.author,
-          description: inputs.description,
-          category: inputs.category,
-          image: inputs.image,
-        },
-        { headers: headers }
-      )
+      .post("http://localhost:3002/books/add", formData, { headers: headers })
       .catch((err) => console.log(err));
     const data = await res.data;
     return data;
@@ -104,13 +105,7 @@ const AddBook = () => {
           variant="outlined"
         />
         <InputLabel sx={labelStyles}>Image</InputLabel>
-        <TextField
-          name="image"
-          onChange={handleChange}
-          value={inputs.image}
-          margin="auto"
-          variant="outlined"
-        />
+        <input type="file" name="image" onChange={handleFileChange} />
         <Button
           sx={{ mt: 1.5, borderRadius: 4 }}
           variant="contained"

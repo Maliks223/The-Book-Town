@@ -55,8 +55,7 @@ const Book = ({
           </Box>
         )}
         <h1>Title: {title}</h1>
-        {/* <h2>Borrowed by: {userEmail}</h2> */}
-        <img src={image} alt="book" />
+        <img src={`http://localhost:3002/${image}`} />
         <p>Author: {author}</p>
         <p>Description: {description}</p>
         <h4>Category: {category}</h4>
