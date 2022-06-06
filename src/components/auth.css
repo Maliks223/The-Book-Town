@@ -29,6 +29,7 @@ body{
   .center form{
     padding: 0 40px;
     box-sizing: border-box;
+    height: 350px;
   }
 
   form .txt_field{

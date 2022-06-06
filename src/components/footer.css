@@ -1,13 +1,14 @@
 .Ftr{
+    padding-top: 10px;
+    height: 8vh;
     background-color:  var(--primary);
-    height: 150px;
-    margin-top: 20px;
-    padding: 35px;
-    color:white;
-    font-family: Open Sans;
-    font-weight: 300;
-    font-size: 60PX;
-    letter-spacing: 20px;
-    text-align: center;
     
+}
+
+.socialsF{
+    display: flex;
+    align-items: center;
+    /* justify-content: space-around; */
+    gap: 150px;
+    justify-content: center;    
 }

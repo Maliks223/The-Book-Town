@@ -22,11 +22,10 @@ const Auth = () => {
     }));
   };
 
-  const sendRequest = async (type = "login") => {
+  const sendRequest = async () => {
     const res = await axios
-      .post(`http://localhost:3002/admin/${type}`, {
+      .post('http://localhost:3002/admin/login', {
         name: inputs.name,
-        email: inputs.email,
         password: inputs.password,
       })
       .catch((err) => console.log(err));
@@ -102,10 +101,10 @@ const Auth = () => {
         {/* <div class="signup_link">
            <a href="#">Signup</a>
         </div> */}
-         <button className="changeto-btn" type="button" onClick={() => setisSignup(!isSignup)}>
+         {/* <button className="changeto-btn" type="button" onClick={() => setisSignup(!isSignup)}>
            Change To {isSignup ? "Login" : "Sign Up"}
         </button> 
-        
+         */}
       </form>
       </div>
 

@@ -56,14 +56,14 @@ const Admin = () => {
         </ul>
         <div>
           
-            <>
+            {/* <>
               {" "}
               <ul>
                 <li><Link className="login-btn" to="/auth">Login</Link></li>
-                {/* <li><Link className="SignUp-btn" to="/auth">Sign Up</Link></li> */}
+                <li><Link className="SignUp-btn" to="/auth">Sign Up</Link></li>
               </ul>
                
-            </>
+            </> */}
             
           {isLoggedIn && (
             <button onClick={() => dispath(authAction.logout())}>
