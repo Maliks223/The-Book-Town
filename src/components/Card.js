@@ -22,7 +22,7 @@ const Card = ({title,imageUrl,body}) => {
             <div className="btnCard">
                 
 
-                    <Popup trigger={<button> Lend </button>} 
+                    {/* <Popup trigger={<button> Lend </button>} 
                     position="right center">
                         
 
@@ -44,7 +44,7 @@ const Card = ({title,imageUrl,body}) => {
                                 
                         </div>
                         
-                    </Popup>
+                    </Popup> */}
                 
         
             </div>

@@ -6,7 +6,7 @@ const AboutUsImage = () => {
   return (
     <div className='aboutUsMain wrapper'>
             <div className='img-aboutUs'>
-              <a href="#" ><img src={aboutUsImage} alt=""/></a>
+              <a href="#" ><img src='https://images.unsplash.com/photo-1614849963640-9cc74b2a826f?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=687&q=80' alt=""/></a>
 
             </div>
             <div className='content-aboutUs'>

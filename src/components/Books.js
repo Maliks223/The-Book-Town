@@ -63,24 +63,24 @@ const Books = () => {
         <MenuItem onClick={clear}>All Books</MenuItem>
       </TextField>
       <div className="Books-flex">
-      {books &&
-        books.map(
-          (book) =>
-            book.isAvailable && (
-              <Book
-                key={book._id}
-                id={book._id}
-                title={book.title}
-                author={book.author}
-                description={book.description}
-                category={book.category}
-                image={book.image}
-                refreshFunc={sendRequest}
-              />
-            )
-            
-        )}
-        </div>
+        {books &&
+          books.map(
+            (book) =>
+              book.isAvailable && (
+                <Book
+                  key={book._id}
+                  id={book._id}
+                  title={book.title}
+                  author={book.author}
+                  description={book.description}
+                  category={book.category}
+                  image={book.image}
+                  refreshFunc={sendRequest}
+                />
+              )
+              
+          )}
+      </div>
          
     </div>
   );

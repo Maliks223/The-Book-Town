@@ -83,9 +83,9 @@ nav{
     transition: width 0.2s linear;
 }
 
-.ul a:hover::after {
+/* .ul a:hover::after {
   width: 100%;
-}
+} */
 
 .toggle-button {
   font-size: 1.8rem;

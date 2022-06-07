@@ -74,8 +74,7 @@
 }
 
 .Books-flex{
-    display: flex;
-    justify-content: space-evenly;
-    flex-basis: 33.33%;
-    flex-wrap: wrap;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
 }
+

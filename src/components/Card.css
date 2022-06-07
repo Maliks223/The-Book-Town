@@ -1,5 +1,5 @@
 .card-container{
-    width: 300px;
+    /* width: 300px; */
     overflow: hidden;
     box-shadow: 0px 0px 15px -5px;
     transition: 0.3s;
@@ -8,6 +8,12 @@
     margin-bottom: 0.8rem;
     border-radius: 10px;
     scroll-snap-align: start;   
+    flex-basis: 33.33%;
+    min-width: 350px;
+    margin: 1rem;
+}
+.card-container img{
+    width: 100%;
 }
 
 .popup-content {
@@ -50,16 +56,19 @@
 }
 
 .image-container img{
-    margin-left: 23px;
+    /* margin-left: 23px;
     margin-top: 14px;
     margin-bottom: 14px;
     object-fit: contain;
     border-radius: 10px;
     background-color: rgba(41, 38, 38, 0.089);
-    overflow: hidden;
-    height: 300px;
-    width: 250px;
+    overflow: hidden; */
+    /* height: 300px; */
+    /* width: 250px; */
     
+}
+.card-container .image-container img{
+    object-fit: cover;
 }
 
 .card-content{
