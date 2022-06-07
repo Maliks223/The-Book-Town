@@ -10,7 +10,9 @@
 .User-form{
     display: flex;
     justify-content: center;
+    
     background-image: url(https://images.unsplash.com/photo-1527176930608-09cb256ab504?ixlib=rb-1.2.1&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1474&q=80);
+    image-resolution: 300dpi;
     background-size: cover;
     height: 92vh;
 }
@@ -30,6 +32,7 @@
 .User-date{
     border: none;
     color: grey;
+    background-color: transparent;
 }
 
 .User-label{
