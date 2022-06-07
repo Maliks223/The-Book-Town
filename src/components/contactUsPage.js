@@ -1,6 +1,6 @@
 import React from "react";
 import "../components/contactUsPage.css";
-import { SocialMediaIconsReact } from "social-media-icons-react";
+// import { SocialMediaIconsReact } from "social-media-icons-react";
 import { useState } from "react";
 import axios from "axios";
 
@@ -18,7 +18,7 @@ const ContactUsPage = () => {
   };
   const sendRequest = async () => {
     const res = await axios
-      .post("http://localhost:3002/control/", {
+      .post("http://localhost:3002/control/add", {
         name: inputs.name,
         email: inputs.email,
         message: inputs.message,
@@ -40,6 +40,7 @@ const ContactUsPage = () => {
           <input
             onChange={handleChange}
             value={inputs.name}
+            name='name'
             className="input1"
             type="text"
             placeholder="Name"
@@ -48,6 +49,7 @@ const ContactUsPage = () => {
           <input
             onChange={handleChange}
             value={inputs.email}
+            name='email'
             className="input1"
             type="email"
             placeholder="Email"
@@ -56,6 +58,7 @@ const ContactUsPage = () => {
           <input
             onChange={handleChange}
             value={inputs.message}
+            name='message'
             className="input1 input3"
             type="text"
             placeholder="Message"
@@ -77,7 +80,7 @@ const ContactUsPage = () => {
               facere qui cum.
             </p>
 
-            <div className="socials">
+            {/* <div className="socials">
               <SocialMediaIconsReact
                 className="social"
                 borderColor="var(--primary)"
@@ -130,7 +133,7 @@ const ContactUsPage = () => {
                 url="https://some-website.com/my-social-media-url"
                 size="49"
               />
-            </div>
+            </div> */}
           </div>
         </div>
 
