@@ -32,11 +32,11 @@ const Books = () => {
   };
 
   return (
-    <div>
+    <div >
       <TextField
         label="Category"
         select
-        sx={{ width: "125px", marginTop: "7px", marginLeft: "5px" }}
+        sx={{ width: "125px", marginTop: "7px", marginLeft: "40%" }}
       >
         {firstData &&
           firstData.map((book) => {
@@ -51,14 +51,18 @@ const Books = () => {
       <TextField
         label="Author"
         select
-        sx={{ width: "125px", marginTop: "7px", marginLeft: "5px" }}
+        sx={{ width: "125px", marginTop: "7px", marginLeft: "55px" }}
       >
+        
+
+       
         {firstData &&
           firstData.map((book) => {
             return <MenuItem onClick={filterAuth}>{book.author}</MenuItem>;
           })}
         <MenuItem onClick={clear}>All Books</MenuItem>
       </TextField>
+      <div className="Books-flex">
       {books &&
         books.map(
           (book) =>
@@ -74,7 +78,10 @@ const Books = () => {
                 refreshFunc={sendRequest}
               />
             )
+            
         )}
+        </div>
+         
     </div>
   );
 };

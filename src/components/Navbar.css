@@ -51,16 +51,16 @@ nav{
   letter-spacing: 2px;
 } */
 
-ul {
+.ul {
   display: flex;
   list-style-type: none;
 }
 
-ul li {
+.ul li {
   margin: 0 1rem;
 }
 
-ul li a {
+.ul li a {
   text-decoration: none;
   display: block;
   color: #eee;
@@ -68,11 +68,11 @@ ul li a {
   font-weight: bolder;
 }
 
-ul li a:hover{
+.ul a:hover{
     color: #57e4b7;
 }
 
-ul li a::after{
+.ul  a::after{
     content: "";
     position: absolute;
     height: 0.12rem;
@@ -83,7 +83,7 @@ ul li a::after{
     transition: width 0.2s linear;
 }
 
-ul li a:hover::after {
+.ul a:hover::after {
   width: 100%;
 }
 
@@ -111,7 +111,7 @@ ul li a:hover::after {
     display: block;
   }
 
-  ul {
+  .ul {
     flex-direction: column;
     position: fixed;
     top: 8vh;
@@ -124,12 +124,12 @@ ul li a:hover::after {
     transition: all 0.3s linear;
   }
 
-  ul li {
+  .ul a {
     padding: 2rem 0;
     font-size: 1.2rem;
   }
 
-  ul.active {
+  .ul.active {
     left: 0;
   }
 }

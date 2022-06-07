@@ -69,3 +69,10 @@
     outline: none;
     background-color: dodgerblue;
 }
+
+.Books-flex{
+    display: flex;
+    justify-content: space-evenly;
+    flex-basis: 33.33%;
+    flex-wrap: wrap;
+}

@@ -19,29 +19,29 @@ const Navbar = () => {
                 <i className="fa-solid fa-book"></i>
             </Link>
         </div >
-        <div className={toggle ? "active" : ""}>
+        <div className={toggle ? "active" : ""} >
           <div className="navbar">
-          <div>
-         
-            <Link onClick={() => setToggle(false)} to="/">
-              Home
-            </Link>
-          </div>
-          <div>
-              <Link onClick={()=> setToggle(false)} to="/books">
-                All books
+
+            <div className="ul">
+              <Link onClick={() => setToggle(false)} to="/">
+                Home
               </Link>
-          </div>
-          <div>
-            <Link onClick={() => setToggle(false)} to="/about">
-              About Us
-            </Link>
-          </div>
-          <div>
-            <Link onClick={() => setToggle(false)} to="/contact">
-              Contact Us
-            </Link>
-          </div>
+            </div>
+            <div className="ul">
+                <Link onClick={()=> setToggle(false)} to="/books">
+                  All books
+                </Link>
+            </div>
+            <div className="ul">
+              <Link onClick={() => setToggle(false)} to="/about">
+                About Us
+              </Link>
+            </div>
+            <div className="ul">
+              <Link onClick={() => setToggle(false)} to="/contact">
+                Contact Us
+              </Link>
+            </div>
           </div>
         </div>
         {/* <div></div> */}
