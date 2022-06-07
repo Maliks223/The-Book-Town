@@ -6,7 +6,8 @@ import { useLocation } from "react-router-dom";
 
 const User = () => {
   const location = useLocation();
-  const id = location.state.bookId;
+  // const id = location.state.bookId;
+  console.log(location.state.bookId);
   // const navigate = useNavigate();
   //   const [user, setUser] = useState();
   const [inputs, setInputs] = useState({
@@ -32,7 +33,7 @@ const User = () => {
         phone: inputs.phone,
         dateFrom: inputs.dateFrom,
         dateTo: inputs.dateTo,
-        book: id,
+        book: location.state.bookId,
       })
       .catch((err) => console.log(err));
     const data = await res.data;

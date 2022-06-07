@@ -1,14 +1,34 @@
-.Ftr{
-    padding-top: 10px;
-    height: 8vh;
-    background-color:  var(--primary);
-    
+.Ftr {
+  padding-top: 10px;
+  height: 8vh;
+  background-color: var(--primary);
+  position: absolute;
+  bottom: 0px;
+  width: 100%;
 }
 
-.socialsF{
-    display: flex;
-    align-items: center;
-    /* justify-content: space-around; */
-    gap: 150px;
-    justify-content: center;    
+.socialsF {
+  display: flex;
+  align-items: center;
+  /* justify-content: space-around; */
+  gap: 150px;
+  justify-content: center;
+}
+
+.home-footer {
+  padding-top: 10px;
+  height: 7vh;
+  background-color: var(--primary);
+  position: absolute;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+q{
+    color: white;
+    font-weight: bold;
+    font-size: 20px;
+    letter-spacing: 13px;
 }

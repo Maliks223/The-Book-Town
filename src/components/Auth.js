@@ -36,18 +36,10 @@ const Auth = () => {
 
   const handleSubmit = (e) => {
     e.preventDefault(); // to prevent send the data to the url
-    console.log(inputs);
-    if (isSignup) {
-      sendRequest("signup")
-        .then(() => dispath(authAction.login()))
-        .then(() => navigate("/books"))
-        .then((data) => console.log(data));
-    } else {
       sendRequest()
         .then(() => dispath(authAction.login()))
         .then(() => navigate("/books"))
         .then((data) => console.log(data));
-    }
   };
   return (
     <div className="bk-color">
@@ -91,20 +83,7 @@ const Auth = () => {
           <span></span>
           <label>Password</label>
         </div>
-
-
-
-        {/* <div class="pass">Forgot Password?</div> */}
-
         <input type="submit" value="Login"/>
-
-        {/* <div class="signup_link">
-           <a href="#">Signup</a>
-        </div> */}
-         {/* <button className="changeto-btn" type="button" onClick={() => setisSignup(!isSignup)}>
-           Change To {isSignup ? "Login" : "Sign Up"}
-        </button> 
-         */}
       </form>
       </div>
 

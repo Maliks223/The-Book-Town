@@ -1,9 +1,10 @@
 import React, { useState, useEffect } from "react";
 import Carousel from "react-elastic-carousel";
 import Banner from "../components/Banner";
-import Footer from "../components/footer";
+// import Footer from "../components/footer";
 import axios from "axios";
 import Book from "../components/Book";
+import HomeFooter from "../components/HomeFooter";
 
 const breakPoints = [
   { width: 576, itemsToShow: 1 },
@@ -58,6 +59,7 @@ const Home = () => {
               return (
                 <Book
                   key={book._id}
+                  id={book._id}
                   author={book.author}
                   description={book.description}
                   category={book.category}
@@ -69,7 +71,7 @@ const Home = () => {
           </Carousel>
         )}
       </div>
-      <Footer />
+      <HomeFooter />
     </>
   );
 };

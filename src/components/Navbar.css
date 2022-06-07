@@ -92,6 +92,10 @@ nav{
   display: none;
 }
 
+.fa-solid,.fa-book{
+  font-size: 200px;
+}
+
 @media(max-width:1564px){
 
   .logo a {
@@ -107,7 +111,7 @@ nav{
 }
 
 @media only screen and (max-width: 650px) {
-  .toggle-button {
+  /* .toggle-button {
     display: block;
   }
 
@@ -131,5 +135,5 @@ nav{
 
   .ul.active {
     left: 0;
-  }
+  } */
 }

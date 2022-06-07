@@ -59,7 +59,8 @@
     font-weight: bold;
     text-decoration: none;
     display: block;
-    padding: 5px;
+    padding: 7px;
+    font-size: 15px;
 }
 
 .Book-button{
@@ -75,6 +76,36 @@
 
 .Books-flex{
     display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    padding: 25px;
 }
 
+@media screen and (max-width:1583px) {
+    .Books-flex{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        padding: 25px;
+    }  
+
+    
+}
+
+@media screen and (max-width:1200px) {
+    .Books-flex{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        padding: 25px;
+    }     
+}
+
+@media screen and (max-width:630px) {
+    .Books-flex{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 25px;
+    }     
+}
