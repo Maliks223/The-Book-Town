@@ -55,6 +55,10 @@
     
 }
 
+.Book-CardDetail{
+    font-weight: bold;
+}
+
 .image-container img{
     /* margin-left: 23px;
     margin-top: 14px;

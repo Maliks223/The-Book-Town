@@ -18,7 +18,7 @@ nav{
 .navbar{
     display: flex;
     justify-content: space-between;
-    gap: 55px;
+    gap: 35px;
 }
 
 .navbar a{

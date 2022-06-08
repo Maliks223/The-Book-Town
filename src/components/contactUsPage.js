@@ -71,69 +71,14 @@ const ContactUsPage = () => {
         <div className="footer">
           <div className="footerTxt">
             <h1>GET IN TOUCH</h1>
-            <h3>
+            <h3 className="contact-hey">
               Hey! We are looking forward<br></br> for your feedback!
             </h3>
-            <p>
+            <p className="contact-text">
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Vero
               possimus sunt quidem necessitatibus incidunt cupiditate nisi, nemo
               facere qui cum.
             </p>
-
-            {/* <div className="socials">
-              <SocialMediaIconsReact
-                className="social"
-                borderColor="var(--primary)"
-                borderWidth="4"
-                borderStyle="solid"
-                icon="twitter"
-                iconColor="rgba(255,255,255,1)"
-                backgroundColor="var(--primary)"
-                iconSize="7"
-                roundness="50%"
-                url="https://some-website.com/my-social-media-url"
-                size="49"
-              />
-              <SocialMediaIconsReact
-                className="social"
-                borderColor="var(--primary)"
-                borderWidth="4"
-                borderStyle="solid"
-                icon="facebook"
-                iconColor="rgba(255,255,255,1)"
-                backgroundColor="var(--primary)"
-                iconSize="7"
-                roundness="50%"
-                url="https://some-website.com/my-social-media-url"
-                size="49"
-              />
-              <SocialMediaIconsReact
-                className="social"
-                borderColor="var(--primary)"
-                borderWidth="4"
-                borderStyle="solid"
-                icon="linkedin"
-                iconColor="rgba(255,255,255,1)"
-                backgroundColor="var(--primary)"
-                iconSize="7"
-                roundness="50%"
-                url="https://some-website.com/my-social-media-url"
-                size="49"
-              />
-              <SocialMediaIconsReact
-                className="social"
-                borderColor="var(--primary)"
-                borderWidth="4"
-                borderStyle="solid"
-                icon="github"
-                iconColor="rgba(255,255,255,1)"
-                backgroundColor="var(--primary)"
-                iconSize="7"
-                roundness="50%"
-                url="https://some-website.com/my-social-media-url"
-                size="49"
-              />
-            </div> */}
           </div>
         </div>
 
@@ -142,29 +87,29 @@ const ContactUsPage = () => {
             <div className="title">
               <h2>CALL US</h2>
               <p>
-                <a href="tel:+96171526244">+96171526244</a>
+                <a className="contact-phone" href="tel:+96171526244">+(961) 71 526244</a>
                 <br></br>
-                <a href="tel:+96171526244">+96171526244</a>
+                <a className="contact-phone" href="tel:+96171526244">+(961) 71 526244</a>
               </p>
             </div>
 
             <div className="title">
               <h2>LOCATION</h2>
               <p>
-                <a
+                <a className="contact-phone"
                   href="https://www.google.com/maps/@33.8839457,35.5103763,14z"
                   target="non-refer"
                 >
                   {" "}
-                  Lebanon, Beirut 2083-3054{" "}
+                  Lebanon , Beirut <br/> 2083 - 3054{" "}
                 </a>
               </p>
             </div>
 
             <div className="title">
               <h2>BUSINESS HOURS </h2>
-              <p>
-                Mon-Fri ..... 10am-8pm <br></br>Sat-Sun ..... Closed
+              <p className="contact-phone">
+                Mon - Fri ..... 10 am - 8 pm <br></br>Sat - Sun ..... Closed
               </p>
             </div>
           </div>

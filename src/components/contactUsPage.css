@@ -71,6 +71,19 @@
     background-color: white;
 }
 
+.contact-phone{
+    color: dodgerblue;
+    font-weight: bold;
+}
+
+.contact-text{
+    margin-top: 4.5%;
+}
+
+.contact-hey{
+    margin-top: 2.5%;
+}
+
 .titles{
     font-size: larger;
     text-align: center;

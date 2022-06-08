@@ -59,9 +59,9 @@ const Book = ({
         <div className="card-content">
         <div className="card-body">
           <h1>Title: {title}</h1>
-          <p className="Book-CardDetail">Author: {author}</p>
-          <p>Description: {description}</p>
-          <h4>Category: {category}</h4>
+          <p className="Book-CardDetail">Author : {author}</p>
+          <p className="Book-CardDetail">Description : {description}</p>
+          <h4>Category : {category}</h4>
           </div>
         </div>
         {!isLoggedIn && (
