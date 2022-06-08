@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Book from "./Book";
 import { MenuItem, TextField } from "@mui/material";
+import "./CSS files/book.css";
 
 const Books = () => {
   const [books, setBooks] = useState();
@@ -21,6 +22,7 @@ const Books = () => {
   useEffect(() => {
     sendRequest();
   }, []);
+  
   const filterCat = (e) => {
     setBooks(firstData.filter((book) => book.category === e.target.innerText));
   };
@@ -36,7 +38,7 @@ const Books = () => {
       <TextField
         label="Category"
         select
-        sx={{ width: "125px", marginTop: "7px", marginLeft: "5px" }}
+        sx={{ width: "125px", marginTop: "7px", marginLeft: "40%" }}
       >
         {firstData &&
           firstData.map((book) => {
@@ -51,7 +53,7 @@ const Books = () => {
       <TextField
         label="Author"
         select
-        sx={{ width: "125px", marginTop: "7px", marginLeft: "5px" }}
+        sx={{ width: "125px", marginTop: "7px", marginLeft: "55px" }}
       >
         {firstData &&
           firstData.map((book) => {
@@ -59,22 +61,24 @@ const Books = () => {
           })}
         <MenuItem onClick={clear}>All Books</MenuItem>
       </TextField>
-      {books &&
-        books.map(
-          (book) =>
-            book.isAvailable && (
-              <Book
-                key={book._id}
-                id={book._id}
-                title={book.title}
-                author={book.author}
-                description={book.description}
-                category={book.category}
-                image={book.image}
-                refreshFunc={sendRequest}
-              />
-            )
-        )}
+      <div className="Books-flex">
+        {books &&
+          books.map(
+            (book) =>
+              book.isAvailable && (
+                <Book
+                  key={book._id}
+                  id={book._id}
+                  title={book.title}
+                  author={book.author}
+                  description={book.description}
+                  category={book.category}
+                  image={book.image}
+                  refreshFunc={sendRequest}
+                />
+              )
+          )}
+      </div>
     </div>
   );
 };

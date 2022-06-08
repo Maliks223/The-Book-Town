@@ -27,7 +27,7 @@ const Borrowed = () => {
   }, []);
 
   return (
-    <div>
+    <div className="Books-flex-borrow">
       {users &&
         users.map(
           (user) =>

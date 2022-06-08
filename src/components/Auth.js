@@ -38,7 +38,7 @@ const Auth = () => {
     e.preventDefault(); // to prevent send the data to the url
     sendRequest()
       .then(() => dispath(authAction.login()))
-      .then(() => navigate("/"));
+      .then(() => navigate("/books"));
   };
 
   return (

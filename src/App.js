@@ -13,27 +13,30 @@ import { useSelector } from "react-redux";
 import User from "../src/components/User";
 import Navbar from "../src/components/Navbar";
 import Borrowed from "../src/components/Borrowed";
+import AddBanner from "./components/AddBanner";
+import Messages from "./components/Messages";
 
 function App() {
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   return (
     <>
-      {/* <Navbar /> */}
       <Router>
         {!isLoggedIn && <Navbar />}
         {isLoggedIn && <Admin />}
         <Routes>
           <Route exact path="/" element={<Home />} />{" "}
-          <Route exact path="/books/borrowed" element={<Borrowed />} />
           <Route exact path="/about" element={<AboutUs />} />
           <Route exact path="/contact" element={<ContactUs />} />
+          <Route exact path="/user" element={<User />} />
           <Route exact path="/books" element={<Books />} />
-          <Route exact path="/books/add" element={<AddBook />} />
           <Route exact path="/userBook" element={<UserBook />} />
           <Route exact path="/books/borrowed" element={<Borrowed />} />
           <Route exact path="/books/:id" element={<BookDetails />} />
           <Route exact path="/auth/" element={<Auth />} />
-          <Route exact path="/user" element={<User />} />
+          <Route exact path="/books/add" element={<AddBook />} />
+          <Route exact path="/addbanner" element={<AddBanner />} />
+          <Route exact path="/messages" element={<Messages />} />
+          <Route exact path="/books/borrowed" element={<Borrowed />} />
         </Routes>
       </Router>
     </>

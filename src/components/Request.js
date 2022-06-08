@@ -1,5 +1,6 @@
 import axios from "axios";
 import React from "react";
+
 // import { useNavigate } from "react-router-dom";
 
 const Request = ({
@@ -73,19 +74,34 @@ const Request = ({
   };
 
   return (
-    <div>
-      <h2>User Name: {name}</h2>
-      <h3>Phone: {phone}</h3>
-      <h4>Email: {email}</h4>
-      <h5>
-        Requested From: {dateFrom.toString().split("T")[0]} To:{" "}
-        {dateTo.toString().split("T")[0]}
-      </h5>
-      <h3>Requested Book: {bookTitle}</h3>
-      <button onClick={handleAccept}>Accept</button>
-      <button onClick={deleteRequest}>Reject</button>
+    <div className="card-container user_req">
+  <div className="card">
+    <div className="card-content">
+      <div className="card-title">
+        <h2>User Name: {name}</h2>
+      </div>
+
+      <div className="card-body">
+        <h3>Phone: {phone}</h3>
+        <h4>Email:&nbsp;{email}</h4>
+        <h5>
+          Requested From: {dateFrom.toString().split("T")[0]} To:{" "}
+          {dateTo.toString().split("T")[0]}
+        </h5>
+        <h3>Requested Book: {bookTitle}</h3>
+      </div>
+      <button className="accept_btn" onClick={handleAccept}>
+        Accept
+      </button>
+      <button className="reject_btn" onClick={deleteRequest}>
+        Reject
+      </button>
     </div>
+  </div>
+</div>  
+
   );
 };
 
 export default Request;
+

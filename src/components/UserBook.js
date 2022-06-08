@@ -23,7 +23,7 @@ const UserBook = () => {
   }, []);
 
   return (
-    <div>
+    <div className="Books-flex">
       {users &&
         users.map(
           (user) =>

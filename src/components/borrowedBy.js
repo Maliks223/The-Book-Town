@@ -59,16 +59,22 @@ const BorrowedBy = ({ email, bookTitle, bookImage, bookId, dateTo }) => {
   };
 
   return (
-    <div>
+    <div className="card-container-borrow">
       <IconButton>
         <KeyboardReturnIcon onClick={handleReturn} />
       </IconButton>
-      <h2>Book: {bookTitle}</h2>
-      <img src={bookImage} alt="" />
-      <div className={expiry ? "bg-red" : ""}>
-        {expiry && <h1 className="expiry">Expired</h1>}
-        <h1>Borrowed By: {email}</h1>
-        <h2>Lended To Date : {dateTo.toString().split("T")[0]}</h2>
+      <div className="card-content">
+        <div className="card-body">
+          <h2>Book: {bookTitle}</h2>
+          <img src={bookImage} alt="" />
+          <div className={expiry ? "bg-red" : ""}>
+            {expiry && <h1 className="expiry">Expired</h1>}
+            <h1>
+              Borrowed By: <br /> {email}
+            </h1>
+            <h2>Lended To Date : {dateTo.toString().split("T")[0]}</h2>
+          </div>
+        </div>
       </div>
     </div>
   );

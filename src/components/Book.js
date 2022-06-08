@@ -1,10 +1,11 @@
-import { React } from "react";
+import { React, useState } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Box, IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
 import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useSelector } from "react-redux";
 import axios from "axios";
+import "./CSS files/book.css";
 
 const Book = ({
   id,
@@ -15,6 +16,14 @@ const Book = ({
   image,
   refreshFunc,
 }) => {
+  const [taken, setTaken] = useState(false);
+
+  console.log(taken);
+  const onClick = () => {
+    setTaken(true);
+    console.log(taken);
+    console.log('clicked');
+  };
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const handleEdit = (e) => {
@@ -43,7 +52,7 @@ const Book = ({
 
   return (
     <>
-      <div className="card">
+      <div className="card-container">
         {isLoggedIn && (
           <Box display={"flex"}>
             <IconButton onClick={handleEdit}>
@@ -54,14 +63,23 @@ const Book = ({
             </IconButton>
           </Box>
         )}
-        <h1>Title: {title}</h1>
         <img src={`http://localhost:3002/${image}`} />
-        <p>Author: {author}</p>
-        <p>Description: {description}</p>
-        <h4>Category: {category}</h4>
-        {!isLoggedIn && (
-          <button type="submit">
-            <Link to="/user" state={{ bookId: id }}>
+        <div className="card-content">
+          <div className="card-body">
+            <h1>Title: {title}</h1>
+            <p>Author: {author}</p>
+            <p>Description: {description}</p>
+            <h4>Category: {category}</h4>
+          </div>
+          {taken &&  (
+            <div>
+              <p>lended Book</p>
+            </div>
+          )}
+        </div>
+        {!isLoggedIn && !taken && (
+          <button className="Book-button" type="submit" onClick={onClick}>
+            <Link className="Book-btn" to="/user" state={{ bookId: id }}>
               Lend
             </Link>
           </button>
