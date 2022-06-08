@@ -9,6 +9,15 @@ import "./borrowed.css";
 const BorrowedBy = ({ email, bookTitle, bookImage, bookId, dateTo }) => {
   let expiryDate = new Date(dateTo);
   let today = new Date();
+  const holdClick = async () => {
+    const res = await axios
+      .put(`http://localhost:3002/books/update/${bookId}`, {
+        suspended: false,
+      })
+      .catch((err) => console.log(err));
+    const data = await res.data;
+    return data;
+  };
 
   const [expiry, setExpiry] = useState(false);
   useEffect(() => {
@@ -54,6 +63,7 @@ const BorrowedBy = ({ email, bookTitle, bookImage, bookId, dateTo }) => {
   };
   const handleReturn = () => {
     acceptRequest()
+      .then(() => holdClick())
       .then(() => bookReturned())
       .then(() => navigate("/books"));
   };

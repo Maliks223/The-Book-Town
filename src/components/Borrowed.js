@@ -34,7 +34,7 @@ const Borrowed = () => {
             user.isBorrow && (
               <BorrowedBy
                 key={user._id}
-                // id={user._id}
+                id={user._id}
                 // name={user.name}
                 email={user.email}
                 dateFrom={user.dateFrom}
