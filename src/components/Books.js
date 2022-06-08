@@ -14,7 +14,6 @@ const Books = () => {
       .catch((err) => console.log(err));
 
     const data = await res.data;
-
     setBooks(data.books);
     setFirstData(data.books);
   };
@@ -22,7 +21,7 @@ const Books = () => {
   useEffect(() => {
     sendRequest();
   }, []);
-  
+
   const filterCat = (e) => {
     setBooks(firstData.filter((book) => book.category === e.target.innerText));
   };
@@ -75,6 +74,7 @@ const Books = () => {
                   category={book.category}
                   image={book.image}
                   refreshFunc={sendRequest}
+                  suspended={book.suspended}
                 />
               )
           )}

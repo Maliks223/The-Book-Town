@@ -65,6 +65,22 @@ const Request = ({
     const data = await res.data;
     return data;
   };
+  const holdClick = async () => {
+    const res = await axios
+      .put(`http://localhost:3002/books/update/${bookId}`, {
+        suspended: false,
+      })
+      .catch((err) => console.log(err));
+    const data = await res.data;
+    return data;
+  };
+
+  const handleDelete = () => {
+    holdClick()
+      .then(() => deleteRequest())
+      .then(() => refreshFunc());
+  };
+
   const handleAccept = () => {
     acceptRequest()
       .then(() => isBorrowed())
@@ -75,33 +91,31 @@ const Request = ({
 
   return (
     <div className="card-container user_req">
-  <div className="card">
-    <div className="card-content">
-      <div className="card-title">
-        <h2>User Name: {name}</h2>
-      </div>
+      <div className="card">
+        <div className="card-content">
+          <div className="card-title">
+            <h2>User Name: {name}</h2>
+          </div>
 
-      <div className="card-body">
-        <h3>Phone: {phone}</h3>
-        <h4>Email:&nbsp;{email}</h4>
-        <h5>
-          Requested From: {dateFrom.toString().split("T")[0]} To:{" "}
-          {dateTo.toString().split("T")[0]}
-        </h5>
-        <h3>Requested Book: {bookTitle}</h3>
+          <div className="card-body">
+            <h3>Phone: {phone}</h3>
+            <h4>Email:&nbsp;{email}</h4>
+            <h5>
+              Requested From: {dateFrom.toString().split("T")[0]} To:{" "}
+              {dateTo.toString().split("T")[0]}
+            </h5>
+            <h3>Requested Book: {bookTitle}</h3>
+          </div>
+          <button className="accept_btn" onClick={handleAccept}>
+            Accept
+          </button>
+          <button className="reject_btn" onClick={handleDelete}>
+            Reject
+          </button>
+        </div>
       </div>
-      <button className="accept_btn" onClick={handleAccept}>
-        Accept
-      </button>
-      <button className="reject_btn" onClick={deleteRequest}>
-        Reject
-      </button>
     </div>
-  </div>
-</div>  
-
   );
 };
 
 export default Request;
-

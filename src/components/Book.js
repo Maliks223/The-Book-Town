@@ -1,4 +1,4 @@
-import { React, useState } from "react";
+import { React } from "react";
 import { Link, useNavigate } from "react-router-dom";
 import { Box, IconButton } from "@mui/material";
 import EditIcon from "@mui/icons-material/Edit";
@@ -15,15 +15,8 @@ const Book = ({
   category,
   image,
   refreshFunc,
+  suspended,
 }) => {
-  const [taken, setTaken] = useState(false);
-
-  console.log(taken);
-  const onClick = () => {
-    setTaken(true);
-    console.log(taken);
-    console.log('clicked');
-  };
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const handleEdit = (e) => {
@@ -41,6 +34,16 @@ const Book = ({
     const data = await res.data;
     return data;
   };
+  const holdClick = async () => {
+    const res = await axios
+      .put(`http://localhost:3002/books/update/${id}`, {
+        suspended: true,
+      })
+      .catch((err) => console.log(err));
+    const data = await res.data;
+    return data;
+  };
+
   const handleDelete = () => {
     deleteRequest().then(() => refreshFunc());
   };
@@ -51,41 +54,35 @@ const Book = ({
   // };
 
   return (
-    <>
-      <div className="card-container">
-        {isLoggedIn && (
-          <Box display={"flex"}>
-            <IconButton onClick={handleEdit}>
-              <EditIcon />
-            </IconButton>
-            <IconButton onClick={handleDelete}>
-              <DeleteOutlineIcon />
-            </IconButton>
-          </Box>
-        )}
-        <img src={`http://localhost:3002/${image}`} />
-        <div className="card-content">
-          <div className="card-body">
-            <h1>Title: {title}</h1>
-            <p>Author: {author}</p>
-            <p>Description: {description}</p>
-            <h4>Category: {category}</h4>
-          </div>
-          {taken &&  (
-            <div>
-              <p>lended Book</p>
-            </div>
-          )}
+    <div className="card-container">
+      {isLoggedIn && (
+        <Box display={"flex"}>
+          <IconButton onClick={handleEdit}>
+            <EditIcon />
+          </IconButton>
+          <IconButton onClick={handleDelete}>
+            <DeleteOutlineIcon />
+          </IconButton>
+        </Box>
+      )}
+      <img src={`http://localhost:3002/${image}`} />
+      <div className="card-content">
+        <div className="card-body">
+          <h1>Title: {title}</h1>
+          <p>Author: {author}</p>
+          <p>Description: {description}</p>
+          <h4>Category: {category}</h4>
+          {suspended && <p>Suspended</p>}
         </div>
-        {!isLoggedIn && !taken && (
-          <button className="Book-button" type="submit" onClick={onClick}>
+        {!isLoggedIn && !suspended && (
+          <button className="Book-button" type="submit" onClick={holdClick}>
             <Link className="Book-btn" to="/user" state={{ bookId: id }}>
               Lend
             </Link>
           </button>
         )}
       </div>
-    </>
+    </div>
   );
 };
 
