@@ -21,6 +21,16 @@ const Home = () => {
     msg: "Loading",
   });
 
+  const sendRequest1 = async () => {
+    const res = await axios
+      .get("http://localhost:3002/books")
+      .catch((err) => console.log(err));
+    
+    const data = await res.data;
+    setBooks(data.books)
+    // return data;
+  };
+
   useEffect(() => {
     setLoading({
       status: true,
@@ -65,6 +75,8 @@ const Home = () => {
                   category={book.category}
                   image={book.image}
                   title={book.title}
+                  suspended={"home"}
+                  refreshFunc={sendRequest1}
                 />
               );
             })}

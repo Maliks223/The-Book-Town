@@ -76,6 +76,7 @@ const Books = () => {
                   description={book.description}
                   category={book.category}
                   image={book.image}
+                  suspended={book.suspended}
                   refreshFunc={sendRequest}
                 />
               )

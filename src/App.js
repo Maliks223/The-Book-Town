@@ -33,7 +33,7 @@ function App() {
           {/* <Route exact path="/books/borrowed" element={<Borrowed />} /> */}
           <Route exact path="/books/:id" element={<BookDetails />} />
           <Route exact path="/auth/" element={<Auth />} />
-          <Route exact path="/user" element={<User />} />
+          {/* <Route exact path="/user" element={<User />} /> */}
         </Routes>
       </Router>
     </>
