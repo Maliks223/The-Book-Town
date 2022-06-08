@@ -30,14 +30,8 @@ q{
     color: white;
     font-weight: bold;
     font-size: 35px;
-    letter-spacing: 15px;
-    /* font-family: 'Pacifico', cursive; */
-    /* font-family: 'Maven Pro', sans-serif; */
-    /* font-family: 'Raleway', sans-serif; */
-    font-family: 'Parisienne', cursive;
-
-
-
+    letter-spacing: 8px;
+    font-family: 'Quicksand', sans-serif;
+    font-style: italic;
 }
-
-@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=Pacifico&family=Parisienne&family=Poppins:wght@200&family=Raleway:wght@300&family=Rubik+Wet+Paint&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=Pacifico&family=Parisienne&family=Poppins:wght@200&family=Quicksand:wght@300&family=Raleway:ital,wght@0,300;1,100;1,300&family=Rubik+Wet+Paint&display=swap');

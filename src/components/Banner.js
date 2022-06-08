@@ -6,6 +6,7 @@ import book2 from "../assets/book-10.png";
 import book3 from "../assets/book5.png";
 import BannerTitle from "./BannerTitle";
 import axios from "axios";
+import {Link} from "react-router-dom"
 
 const Banner = () => {
   const [banner, setBanner] = useState();
@@ -34,9 +35,9 @@ const Banner = () => {
               banner.map((title) => (
                 <BannerTitle key={title._id} text={title.text}></BannerTitle>
               ))}
-            <a href="#" class="btn">
-              Read Now
-            </a>
+            <Link to="/books" class="btn">
+              Lend Now
+            </Link>
           </div>
 
           <div class="books">
