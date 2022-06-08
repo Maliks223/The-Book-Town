@@ -18,14 +18,12 @@ import CloseIcon from "@mui/icons-material/Close";
 import Typography from "@mui/material/Typography";
 import { color } from "@mui/system";
 
-import { makeStyles } from '@material-ui/core/styles';
-const useStyles = makeStyles(theme => ({
+import { makeStyles } from "@material-ui/core/styles";
+const useStyles = makeStyles((theme) => ({
   dialogPaper: {
-     
-      width:"550px"  
+    width: "550px",
   },
 }));
-
 
 const Book = ({
   id,
@@ -35,9 +33,10 @@ const Book = ({
   category,
   image,
   suspended,
+  home,
   refreshFunc,
 }) => {
-  console.log(suspended)
+  console.log(suspended);
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const handleEdit = (e) => {
@@ -116,7 +115,7 @@ const Book = ({
     dateFrom: "",
     dateTo: "",
   });
-  const [dialog,setDialog]=useState(false);
+  const [dialog, setDialog] = useState(false);
 
   const handleChange = (e) => {
     setInputs((prevState) => ({
@@ -154,15 +153,15 @@ const Book = ({
   const handleSubmit = (e) => {
     e.preventDefault(); // to prevent send the data to the url
     console.log(inputs);
-    sendRequest()
+    sendRequest();
   };
-  const handleClick =()=>{
-    editSuspened().then(()=>refreshFunc())
-    .then(()=>handleClose())
+  const handleClick = () => {
+    editSuspened()
+      .then(() => refreshFunc())
+      .then(() => handleClose());
     // setDialog(true)
-
-  }
-const classes = useStyles();
+  };
+  const classes = useStyles();
   return (
     <>
       <div className="card-container">
@@ -180,11 +179,11 @@ const classes = useStyles();
             <p className="Book-CardDetail">Author : {author}</p>
             <p className="Book-CardDetail">Description : {description}</p>
             <h4>Category : {category}</h4>
-            {suspended=="home" && <div></div>}
+            {/* {suspended == "home" && <div></div>} */}
             {suspended && <h1>Suspended</h1>}
           </div>
         </div>
-        {!isLoggedIn && !suspended && (
+        {!isLoggedIn && !suspended && !home && (
           <div>
             <button className="Book-button" type="submit">
               <div
@@ -199,18 +198,18 @@ const classes = useStyles();
               onClose={handleClose}
               aria-labelledby="customized-dialog-title"
               open={open}
-              classes={{ paper : classes.dialogPaper}}
+              classes={{ paper: classes.dialogPaper }}
             >
-              <BootstrapDialogTitle
+              <DialogTitle
                 sx={{
                   textAlign: "center",
-                  color:"dodgerBlue"
+                  color: "dodgerBlue",
                 }}
                 id="customized-dialog-title"
                 onClose={handleClose}
               >
                 USER FORM
-              </BootstrapDialogTitle>
+              </DialogTitle>
 
               <DialogContent dividers>
                 <div className="User-form">
@@ -261,7 +260,11 @@ const classes = useStyles();
                       name="dateTo"
                     />
                     <br />
-                    <button onClick={handleClick} className="User-submit" type="submit">
+                    <button
+                      onClick={handleClick}
+                      className="User-submit"
+                      type="submit"
+                    >
                       Submit
                     </button>
                     {/* <DialogActions>
@@ -272,7 +275,6 @@ const classes = useStyles();
                   </form>
                 </div>
               </DialogContent>
-              
             </Dialog>
           </div>
         )}
