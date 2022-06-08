@@ -34,9 +34,7 @@ const Banner = () => {
               banner.map((title) => (
                 <BannerTitle key={title._id} text={title.text}></BannerTitle>
               ))}
-            <a href="#" class="btn">
-              Read Now
-            </a>
+            Link
           </div>
 
           <div class="books">

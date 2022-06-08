@@ -75,7 +75,7 @@ const Home = () => {
                   category={book.category}
                   image={book.image}
                   title={book.title}
-                  suspended={"home"}
+                  home={"home"}
                   refreshFunc={sendRequest1}
                 />
               );
