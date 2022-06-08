@@ -5,7 +5,7 @@ const HomeFooter = () => {
     return ( 
         <>
         <div className="home-footer">
-            <p><q>So many books, so little time.</q></p>
+            <p><q>So many books, so little time</q></p>
         </div>
         </>
      );

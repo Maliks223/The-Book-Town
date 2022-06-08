@@ -28,6 +28,10 @@ const ContactUsPage = () => {
     return data;
   };
 
+  const handleAlert = () =>{
+    alert("Thank you. We will reach to you soon")
+  }
+
   const handleSubmit = (e) => {
     e.preventDefault();
     sendRequest();
@@ -64,7 +68,7 @@ const ContactUsPage = () => {
             placeholder="Message"
             required
           ></input>
-          <input className="input1 input4" name="subject" type="submit"></input>
+          <input className="input1 input4" name="subject" onClick={handleAlert} type="submit"></input>
         </div>
       </form>
       <div>

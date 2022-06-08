@@ -29,6 +29,15 @@
 q{
     color: white;
     font-weight: bold;
-    font-size: 20px;
-    letter-spacing: 13px;
+    font-size: 35px;
+    letter-spacing: 15px;
+    /* font-family: 'Pacifico', cursive; */
+    /* font-family: 'Maven Pro', sans-serif; */
+    /* font-family: 'Raleway', sans-serif; */
+    font-family: 'Parisienne', cursive;
+
+
+
 }
+
+@import url('https://fonts.googleapis.com/css2?family=Maven+Pro&family=Pacifico&family=Parisienne&family=Poppins:wght@200&family=Raleway:wght@300&family=Rubik+Wet+Paint&display=swap');

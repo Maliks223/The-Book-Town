@@ -1,9 +1,11 @@
 import React from "react";
 
-const  BannerTitle= () => {
-    return ( <>
-    
-    </> );
-}
- 
+const BannerTitle = ({ text }) => {
+  return (
+    <>
+      <h1 className="banner-title">{text}</h1>
+    </>
+  );
+};
+
 export default BannerTitle;
