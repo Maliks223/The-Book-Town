@@ -3,6 +3,7 @@ import axios from "axios";
 import { useEffect, useState } from "react";
 import Book from "./Book";
 import { MenuItem, TextField } from "@mui/material";
+import './adminBooks.css'
 
 const Books = () => {
   const [books, setBooks] = useState();
@@ -21,26 +22,6 @@ const Books = () => {
   useEffect(() => {
     sendRequest();
   }, []);
-  let uniqueCat = [];
-  if (firstData) {
-    firstData.map((unique) => {
-      uniqueCat.push(unique.category);
-    });
-  }
-  const set = new Set(uniqueCat); // set undefined
-  const finalArray = Array.from(set); // parse to array
-
-  let uniqueAuth = [];
-  if (firstData) {
-    firstData.map((unique) => {
-      uniqueAuth.push(unique.author);
-    });
-  }
-  const aSet = new Set(uniqueAuth);
-  const finalAuthors = Array.from(aSet);
-
-  console.log(uniqueCat);
-
   const filterCat = (e) => {
     setBooks(firstData.filter((book) => book.category === e.target.innerText));
   };
@@ -59,36 +40,27 @@ const Books = () => {
         sx={{ width: "125px", marginTop: "7px", marginLeft: "80%" }}
       >
         {firstData &&
-          finalArray.map((book) => {
+          firstData.map((book) => {
             return (
-              <MenuItem value={book} key={book._id} onClick={filterCat}>
-                {book}
+              <MenuItem key={book._id} onClick={filterCat}>
+                {book.category}
               </MenuItem>
             );
           })}
-        <MenuItem value={firstData} onClick={clear}>
-          All Books
-        </MenuItem>
+        <MenuItem onClick={clear}>All Books</MenuItem>
       </TextField>
       <TextField
-        className="Authorr"
         label="Author"
         select
-        sx={{ width: "125px", marginTop: "7px", marginLeft: "50px" }}
+        sx={{ width: "125px", marginTop: "7px", marginLeft: "55px" }}
       >
         {firstData &&
-          finalAuthors.map((book) => {
-            return (
-              <MenuItem value={book} onClick={filterAuth}>
-                {book}
-              </MenuItem>
-            );
+          firstData.map((book) => {
+            return <MenuItem onClick={filterAuth}>{book.author}</MenuItem>;
           })}
-        <MenuItem value={firstData} onClick={clear}>
-          All Books
-        </MenuItem>
+        <MenuItem onClick={clear}>All Books</MenuItem>
       </TextField>
-      <div className="Books-flex">
+      <div className="Books-flexxx">
         {books &&
           books.map(
             (book) =>

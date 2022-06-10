@@ -42,7 +42,7 @@ const Home = () => {
         msg: "Loading...",
       });
       sendRequest();
-    }, 500);
+    }, 650);
   }, []);
   const sendRequest = async () => {
     const res = await axios

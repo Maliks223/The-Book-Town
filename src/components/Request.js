@@ -1,5 +1,8 @@
 import axios from "axios";
 import React from "react";
+import './CSS files/book.css'
+import './request.css'
+
 // import { useNavigate } from "react-router-dom";
 
 const Request = ({
@@ -64,6 +67,22 @@ const Request = ({
     const data = await res.data;
     return data;
   };
+  const holdClick = async () => {
+    const res = await axios
+      .put(`http://localhost:3002/books/update/${bookId}`, {
+        suspended: false,
+      })
+      .catch((err) => console.log(err));
+    const data = await res.data;
+    return data;
+  };
+
+  const handleDelete = () => {
+    holdClick()
+      .then(() => deleteRequest())
+      .then(() => refreshFunc());
+  };
+
   const handleAccept = () => {
     acceptRequest()
       .then(() => isBorrowed())
@@ -73,17 +92,30 @@ const Request = ({
   };
 
   return (
-    <div>
-      <h2>User Name: {name}</h2>
-      <h3>Phone: {phone}</h3>
-      <h4>Email: {email}</h4>
-      <h5>
-        Requested From: {dateFrom.toString().split("T")[0]} To:{" "}
-        {dateTo.toString().split("T")[0]}
-      </h5>
-      <h3>Requested Book: {bookTitle}</h3>
-      <button onClick={handleAccept}>Accept</button>
-      <button onClick={deleteRequest}>Reject</button>
+    <div className="req-container">
+      <div className="card-container-req">
+        <div className="card-content-req">
+          <div className="card-title">
+            <h2>User Name: {name}</h2>
+          </div>
+        </div>
+
+        <div className="card-body-request">
+          <h3>Phone: {phone}</h3>
+          <h4>Email:&nbsp;{email}</h4>
+          <h5 className="date-req">
+            Requested From: {dateFrom.toString().split("T")[0]} To:{" "}
+            {dateTo.toString().split("T")[0]}
+          </h5>
+          <h3>Requested Book: {bookTitle}</h3>
+        </div>
+        <button className="accept_btn-req" onClick={handleAccept}>
+          Accept
+        </button>
+        <button className="reject_btn-req" onClick={handleDelete}>
+          Reject
+        </button>
+      </div>
     </div>
   );
 };

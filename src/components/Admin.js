@@ -1,10 +1,9 @@
 import React from "react";
 import { useState } from "react";
 import { Link } from "react-router-dom";
-// import "./Navbar.css";
-import "./Admin.css"
 import { useDispatch, useSelector } from "react-redux";
 import { authAction } from "../store";
+import "./Admin.css";
 
 const Admin = () => {
   const dispath = useDispatch();
@@ -15,51 +14,81 @@ const Admin = () => {
   const togglehandler = () => {
     setToggle(!toggle);
   };
+  const logOut = () => {
+    localStorage.clear();
+  };
 
   return (
     <>
       <div className="sidebar">
         <div className="logoo">
-          <Link to="/">
+          <a>
             <h3>Admin</h3>
-            
-          </Link>
+          </a>
           {isLoggedIn && (
             <div className="elt-container">
               <ul>
                 <li>
-                  <Link to="/books">All Books</Link>
+                  <Link to="/books/admin" className="side_elt">
+                    All Books
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/userBook">User Books</Link>
+                  <Link to="/userBook" className="side_elt">
+                    Requests
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/books/borrowed">Borrowed Books</Link>
+                  <Link to="/books/borrowed" className="side_elt">
+                    Borrowed Books
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/books/add">Add Book</Link>
+                  <Link to="/books/add" className="side_elt">
+                    Add Book
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/contactUsMessages">ContactUs Messages</Link>
+                  <Link to="/addbanner" className="side_elt">
+                    Banner Title
+                  </Link>
                 </li>
                 <li>
-                  <Link to="/BannerTitle">Banner Title</Link>
+                  <Link to="/messages" className="side_elt">
+                    Messages
+                  </Link>
                 </li>
               </ul>
             </div>
           )}
         </div>
-       
-        <div className="logout-container">
-          
-
+        <>
+          {" "}
+          {/* <button>
+                <Link to="/auth">Login</Link>
+              </button>
+              {/* <button>
+                <Link to="/auth">Signup</Link>
+              // </button> */}
+        </>
+        <div>
           {isLoggedIn && (
-            <button className="btn-logoutt"  onClick={() => dispath(authAction.logout())}>
-              <Link className="logout-"   to="/auth">Logout</Link>
+            <button
+              className="btn-logoutt"
+              onClick={() => {
+                dispath(authAction.logout());
+                logOut();
+              }}
+            >
+              <Link className="logout-" to="/auth">
+                Logout
+              </Link>
             </button>
           )}
         </div>
-        
+      </div>
+      <div onClick={togglehandler} className="toggle-button">
+        <i className={toggle ? "fa-solid fa-xmark" : "fa-solid fa-bars"}></i>
       </div>
     </>
   );

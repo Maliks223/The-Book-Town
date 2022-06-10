@@ -1,11 +1,14 @@
 import React from "react";
 import axios from "axios";
-import Request from "./Request";
-import { useEffect, useState } from "react";
-
+import { useState, useEffect } from "react";
+import BorrowedBy from "./borrowedBy";
 // import Book from "./Book";
+// import Request from "./Request";
 
-const UserBook = () => {
+// import { useLocation } from "react-router-dom";
+
+const Borrowed = () => {
+  // const location = useLocation();
   const [users, setUsers] = useState();
   const sendRequest = async () => {
     let token = localStorage.getItem("token");
@@ -17,35 +20,34 @@ const UserBook = () => {
       .catch((err) => console.log(err));
 
     const data = await res.data;
-    setUsers(data.users);
+    return data;
   };
   useEffect(() => {
-    sendRequest();
+    sendRequest().then((data) => setUsers(data.users));
   }, []);
 
   return (
-    <div className="request">
+    <div className="Books-flex-borrow">
       {users &&
         users.map(
           (user) =>
-            user.isBorrow || (
-              <Request
+            user.isBorrow && (
+              <BorrowedBy
                 key={user._id}
                 id={user._id}
-                name={user.name}
+                // name={user.name}
                 email={user.email}
                 dateFrom={user.dateFrom}
                 dateTo={user.dateTo}
                 phone={user.phone}
-                borrowed={user.isBorrow}
                 bookTitle={user.book.title}
                 bookId={user.book._id}
-                refreshFunc={sendRequest}
-              ></Request>
+                bookImage={user.book.image}
+              ></BorrowedBy>
             )
         )}
     </div>
   );
 };
 
-export default UserBook;
+export default Borrowed;

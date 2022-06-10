@@ -1,8 +1,8 @@
 import { React, useState } from "react";
 import { Link, useNavigate, useLocation } from "react-router-dom";
 import { Box, IconButton } from "@mui/material";
-// import EditIcon from "@mui/icons-material/Edit";
-// import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
+import EditIcon from "@mui/icons-material/Edit";
+import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import "./Card.css";
@@ -42,6 +42,8 @@ const Book = ({
   const handleEdit = (e) => {
     navigate(`/books/${id}`);
   };
+
+  const [dialog, setDialog] = useState(false);
 
   const deleteRequest = async () => {
     let token = localStorage.getItem("token");
@@ -115,7 +117,7 @@ const Book = ({
     dateFrom: "",
     dateTo: "",
   });
-  const [dialog, setDialog] = useState(false);
+  // const [dialog, setDialog] = useState(false);
 
   const handleChange = (e) => {
     setInputs((prevState) => ({
@@ -159,28 +161,47 @@ const Book = ({
     editSuspened()
       .then(() => refreshFunc())
       .then(() => handleClose());
-    // setDialog(true)
+
+    // .then(()=>setDialog(true))
   };
   const classes = useStyles();
   return (
     <>
       <div className="card-container">
         {isLoggedIn && (
-          <Box display={"flex"}>
-            <button onClick={handleEdit}>Edit</button>
-            <button onClick={handleDelete}>Delete</button>
+          <Box>
+            <EditIcon
+              sx={{ marginLeft: "20px", cursor: "pointer" }}
+              onClick={handleEdit}
+            >
+              Edit
+            </EditIcon>
+            <DeleteOutlineIcon
+              sx={{ marginLeft: "20px", cursor: "pointer" }}
+              onClick={handleDelete}
+            >
+              Delete
+            </DeleteOutlineIcon>
           </Box>
         )}
-
         <img alt="" src={`http://localhost:3002/${image}`} />
         <div className="card-content">
           <div className="card-body">
-            <h1>Title: {title}</h1>
-            <p className="Book-CardDetail">Author : {author}</p>
-            <p className="Book-CardDetail">Description : {description}</p>
-            <h4>Category : {category}</h4>
+            <h1 className="card-body-h1">{title}</h1>
+            <div className="card-grid-container">
+              <div>
+                <p className="Book-CardDetail">Author</p>
+                <p className="Book-CardDetail">Description</p>
+                <h4>Category</h4>
+              </div>
+              <div>
+                <p>: {author}</p>
+                <p>: {description}</p>
+                <p>: {category}</p>
+              </div>
+            </div>
             {/* {suspended == "home" && <div></div>} */}
-            {suspended && <h1>Suspended</h1>}
+            {suspended && <h1 className="card-body-h1">Suspended</h1>}
           </div>
         </div>
         {!isLoggedIn && !suspended && !home && (
@@ -191,7 +212,7 @@ const Book = ({
                 onClick={handleClickOpen}
                 state={{ bookId: id }}
               >
-                Lend
+                Rent
               </div>
             </button>
             <Dialog
@@ -261,7 +282,7 @@ const Book = ({
                     />
                     <br />
                     <button
-                      onClick={handleClick}
+                      onClick={() => setDialog(true)}
                       className="User-submit"
                       type="submit"
                     >
@@ -275,6 +296,23 @@ const Book = ({
                   </form>
                 </div>
               </DialogContent>
+              <Dialog open={dialog}>
+                <div className="confirm">
+                  <div className="confirm-text">
+                    Your request is being processed, you will be notefied upon
+                    approval.
+                  </div>
+                  <button
+                    className="confirm-btn"
+                    onClick={() => {
+                      handleClick();
+                      setDialog(false);
+                    }}
+                  >
+                    Back To Books
+                  </button>
+                </div>
+              </Dialog>
             </Dialog>
           </div>
         )}

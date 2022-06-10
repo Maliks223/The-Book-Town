@@ -46,6 +46,7 @@
 
 .books a img {
   height: 18rem;
+margin-top: 18px;
 }
 
 .books a:hover {
@@ -53,7 +54,7 @@
 }
 
 .stand {
-  margin-top: -1.4rem;
+  margin-top: -6px;
   width: 100%;
 }
 

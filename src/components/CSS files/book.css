@@ -1,0 +1,351 @@
+.Book-btn{
+    color: white;
+    font-weight: bold;
+    text-decoration: none;
+    display: block;
+    padding: 7px;
+    font-size: 15px;
+    border-radius: 5px;
+
+}
+
+.Book-button{
+    margin: 0 auto;
+    display: block;
+    border-radius: 5px;
+    margin-bottom: 10px;
+    width: 100px;
+    outline: none;
+    background-color: dodgerblue;
+}
+
+.Books-flex{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    gap: 15px;
+    padding: 25px;
+    margin-left: 240px;
+}
+.Books-flex-borrow{
+display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 15px;
+    padding: 25px;
+    margin-left: 240px;
+}
+
+@media screen and (max-width:1583px) {
+    .Books-flex{
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 15px;
+        padding: 25px;
+    }  
+
+    
+}
+
+@media screen and (max-width:1200px) {
+    .Books-flex{
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 15px;
+        padding: 25px;
+    }     
+}
+
+@media screen and (max-width:630px) {
+    .Books-flex{
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 15px;
+        padding: 25px;
+    }     
+}
+
+.card-container{
+    /* width: 300px; */
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.3s;
+    animation: ease-in;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    border-radius: 10px;
+    scroll-snap-align: start;   
+    flex-basis: 33.33%;
+    min-width: 350px;
+    margin: 1rem;
+}
+
+.card-container-borrow{
+    overflow: hidden;
+    box-shadow: 0px 0px 15px -5px;
+    transition: 0.3s;
+    animation: ease-in;
+    margin-top: 0.8rem;
+    margin-bottom: 0.8rem;
+    border-radius: 10px;
+    scroll-snap-align: start;   
+    flex-basis: 33.33%;
+    /* width: */
+    /* min-width: 350px; */
+    margin: 1rem;
+    width: fit-content;
+}
+
+/* 
+.card-container img{
+    width: 100%;
+} */
+    
+.popup-content {
+    width: 0 !important;
+}
+
+.carousel .dot{
+    background-color: var(--primary);
+}
+.sc-bczRLJ.eWjCzc.rec.rec-arrow.rec.rec-arrow-right{
+    background-color: var(--primary);
+}
+
+.sc-bczRLJ.eWjCzc.rec.rec-arrow.rec.rec-arrow-left{
+    background-color: var(--primary);
+}
+
+.sc-iBkjds.kdCslO.rec.rec-pagination .sc-gKXOVf.krmNah.rec.rec-dot.rec.rec-dot.active{
+    background-color: var(--primary);
+}
+
+/* .krmNah {
+    background-color: red !important;
+} */
+
+
+.lendFormWrapper{
+    position: fixed; 
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background-color: rgba(0, 0, 0, 0.703);
+}
+
+.card-container:hover{
+    transform: scale(1.01);
+    box-shadow: 0px 0px 15px 0px;
+    
+}
+/* 
+.image-container img{
+    /* margin-left: 23px;
+    margin-top: 14px;
+    margin-bottom: 14px;
+    object-fit: contain;
+    border-radius: 10px;
+    background-color: rgba(41, 38, 38, 0.089);
+    overflow: hidden; */
+    /* height: 300px; */
+    /* width: 250px; */
+    
+/* } */ 
+.card-container .image-container img{
+    object-fit: cover;
+}
+
+.card-content{
+    margin: 1rem;
+    margin-top: 0.3rem;
+
+}
+
+h3,p{
+    margin: 0;
+    padding: 0;
+}
+
+.card-title{
+    margin-bottom: 0.5rem;
+}
+
+.btnCard{
+    display: flex;
+    justify-content: center; 
+    color: red;
+}
+
+.btnCard button{
+    padding: 0.5rem;
+    background-color: white;
+    border: none;
+    transition: 0.2s;
+    margin-bottom: 0.5rem;
+}
+
+.btnCard button{
+    background-color:  var(--primary);
+    border-radius: 0.5rem;
+    color: white;
+    letter-spacing: 2px;
+    cursor: pointer;
+}
+
+.lend{
+    text-transform: uppercase;
+    font-weight: bold;
+    cursor: pointer;
+    font-size: 15px;
+    padding: 4px;
+}
+
+.card-flex{
+    display: flex;
+    justify-content:space-around;
+    position: relative;
+    margin: auto;
+    max-width: 95%;
+    margin-bottom: 30px;
+  }
+
+.viewAll-btn{
+    text-decoration: none;
+    display: grid;
+    height: 50px;
+    width: 100px;
+    background-color:  var(--primary);
+    color: white;
+    text-align: center;
+    border-radius:.5rem ;
+    cursor: pointer;
+    margin: 0 auto;
+    margin-top: 1rem;
+    place-items: center;
+    font-weight: bolder;
+    letter-spacing: 3px;
+    font-size: 17px;
+}
+
+
+.lendForm{
+    padding: 32px;
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    /* background:linear-gradient(120deg,#2980b9, #8e44ad); */
+    background-color: rgb(46, 89, 219);
+    display: flex;
+    flex-direction: column;
+    /* width: 40vw; */
+    /* height: 45vh; */
+    border-radius: 10px;
+    border: none;
+    box-shadow: 200px black;
+  
+}
+
+.lendInput {
+    font-size: larger;
+    font-weight: 700;
+    margin: 10px;
+    border:none;
+    border-radius: 10px;
+    padding: 20px;  
+    margin: 10px;
+}
+
+.dates{
+    display: flex;
+    justify-content: space-evenly;
+
+}
+
+.lendInput8{
+   width: 25%;
+   align-self: center;
+   margin-top: 20px;
+   height: 50px;
+   font-size: 20px;
+   border: 1px white solid;
+   border-radius: 10px;
+}
+
+.lendInput8:hover{
+    transform: scale(1.01);
+    border: 1px white solid;
+    /* background:linear-gradient(120deg,#2980b9, #8e44ad); */
+    background-color: var(--primary);
+}
+
+.lendInput5, .lendInput7{
+    border: 1px white solid;
+    
+    /* background:linear-gradient(120deg,#2980b9, #8e44ad); */
+    background-color:  rgb(46, 89, 219);
+}
+
+.lendInput4, .lendInput6{
+    font-size: 20px;
+    font-weight: bolder;
+    color: white;
+}
+
+@media screen and (max-width:935px) {
+    .card-flex{
+        flex-direction: column;
+        align-items: center;
+    }
+  }
+
+  /* @media screen and (max-width:1500px) {
+    .Authorr{
+        margin-left: 70%;
+    }
+  } */
+
+
+  @keyframes anvil {
+    0% {
+      transform: scale(1) translateY(0px);
+      opacity: 0;
+      box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+    }
+    1% {
+      transform: scale(0.96) translateY(10px);
+      opacity: 0;
+      box-shadow: 0 0 0 rgba(241, 241, 241, 0);
+    }
+    100% {
+      transform: scale(1) translateY(0px);
+      opacity: 1;
+      box-shadow: 0 0 500px rgba(241, 241, 241, 0);
+    }
+  }
+
+  .reject_btn{
+    margin-left: 10px;
+    padding: 3px;
+    background-color: dodgerblue;
+    border-radius: 12px;
+    color: white;
+    border: none;
+    width: 70px;
+    cursor: pointer;
+}
+
+.accept_btn{
+    padding: 3px;
+    background-color: dodgerblue;
+    border-radius: 12px;
+    color: white;
+    border: none;
+    cursor: pointer;
+    width: 70px;
+}
+
+
+  /* .popup-content {
+    -webkit-animation: anvil 0.3s cubic-bezier(0.38, 0.1, 0.36, 0.9) forwards;
+  } */
+
