@@ -1,7 +1,16 @@
-.Books-flexxx{
-    display: grid;
-    grid-template-columns: 1fr 1fr 1fr;
-    gap: 15px;
-    padding: 25px;
-    margin-left: 250px;
+.Books-flexxx {
+  display: grid;
+  grid-template-columns: 1fr 1fr 1fr;
+  gap: 15px;
+  padding: 25px;
+  margin-left: 250px;
+}
+
+.label-msg {
+  display: inline-table;
+  width: 70%;
+}
+
+.span-msg{
+    color: green;
 }

@@ -45,9 +45,7 @@ const Messages = () => {
               <TableCell
                 align="center"
                 sx={{ fontWeight: "bold", color: "dodgerblue" }}
-              >
-                Email
-              </TableCell>
+              ></TableCell>
               <TableCell
                 align="center"
                 sx={{
@@ -56,7 +54,7 @@ const Messages = () => {
                   color: "dodgerblue",
                 }}
               >
-                Message
+                Email
               </TableCell>
             </TableRow>
           </TableHead>
@@ -65,9 +63,12 @@ const Messages = () => {
       {contactUs &&
         contactUs.map((message) => (
           <Message
+            key={message._id}
+            id={message._id}
             name={message.name}
             email={message.email}
             message={message.message}
+           refreshFunc ={sendRequest}
           ></Message>
         ))}
     </div>

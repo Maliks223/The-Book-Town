@@ -25,7 +25,7 @@ nav{
 .navbar a{
     text-decoration: none;
     color: white;
-    font-weight: bold;
+    font-weight: bolder;
     justify-content: space-between;
 }
 

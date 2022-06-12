@@ -73,11 +73,12 @@
 }
 
 .details-img {
-  width: fit-content;
-  height: fit-content;
   margin-top: 40px;
   margin-right: 1px;
+    max-height: 320px;
+  max-width: 225px;
 }
+
 
 /* .details-desc {
   margin-left: 243px;
