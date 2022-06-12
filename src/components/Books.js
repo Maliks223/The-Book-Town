@@ -56,7 +56,7 @@ const Books = () => {
       <TextField
         label="Category"
         select
-        sx={{ width: "125px", marginTop: "7px", marginLeft: "80%" }}
+        sx={{ width: "125px", marginTop: "7px", marginLeft: "2%" }}
       >
         {firstData &&
           finalArray.map((book) => {

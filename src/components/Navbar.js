@@ -29,7 +29,7 @@ const Navbar = () => {
             </div>
             <div className="ul">
                 <Link onClick={()=> setToggle(false)} to="/books">
-                  All books
+                  Books
                 </Link>
             </div>
             <div className="ul">

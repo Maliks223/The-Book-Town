@@ -1,7 +1,7 @@
 .card-container {
   /* width: 300px; */
   overflow: hidden;
-  box-shadow: 0px 0px 7px -5px;
+  /* box-shadow: 0px 0px 6.7px -5px; */
   transition: 0.3s;
   animation: ease-in;
   margin-top: 0.8rem;
@@ -65,16 +65,18 @@
 }
 
 .details {
-  display: flex;
-  flex-direction: column;
-  width: 600px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  width: 550px;
   height: 400px;
+  gap: 50px;
 }
 
 .details-img {
-  width: 200px;
-  height: 300px;
-  align-self: flex-start;
+  width: fit-content;
+  height: fit-content;
+  margin-top: 40px;
+  margin-right: 1px;
 }
 
 /* .details-desc {
@@ -84,21 +86,21 @@
 
 .desc {
   color: dodgerblue;
-  align-self: center;
-  /* margin-left: 300px; */
 }
 
-.details-ex{
+.paragraph {
+  align-self: center;
+}
+
+.details-ex {
   align-self: flex-end;
   position: absolute;
   color: dodgerblue;
 }
-.details-ex:hover{
+.details-ex:hover {
   cursor: pointer;
   color: red;
 }
-
-
 
 .card-container img {
   height: 360px;
@@ -147,7 +149,7 @@
 
 .card-container:hover {
   transform: scale(1.01);
-  /* box-shadow: 0px 0px 15px 0px; */
+  box-shadow: 0px 0px 7px 0px;
 }
 
 .Book-CardDetail {

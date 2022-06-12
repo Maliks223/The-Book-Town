@@ -321,18 +321,26 @@ const Book = ({
           </div>
         )}
       </div>
-      <Dialog sx={{}} open={details}>
+      <Dialog open={details}>
         <div className="details">
-          <h1 className="details-desc desc">Description</h1>
-          <p className="details-desc">{description}</p>
-          <img
-            src={`http://localhost:3002/${image}`}
-            alt="description-image"
-            className="details-img"
-          />
-          <CloseIcon className="details-ex" onClick={() => setDetails(false)}>
-            ok
-          </CloseIcon>
+          <div>
+            <h1 className="details-desc desc">Description</h1>
+            <p className="details-desc paragraph">{description}</p>
+            <h2 className="details-desc desc">Author</h2>
+            <p className="details-desc paragraph">{author}</p>
+            <h3 className="details-desc desc">Category</h3>
+            <p className="details-desc paragraph">{category}</p>
+          </div>
+          <div>
+            <img
+              src={`http://localhost:3002/${image}`}
+              alt="description-image"
+              className="details-img"
+            />
+            <CloseIcon className="details-ex" onClick={() => setDetails(false)}>
+              ok
+            </CloseIcon>
+          </div>
         </div>
       </Dialog>
     </>

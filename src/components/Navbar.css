@@ -133,3 +133,50 @@ nav{
     left: 0;
   } */
 }
+@media (max-width:500px){
+  .navbar{
+    gap: 17px;
+  }
+}
+
+@media (max-width:725px){
+  q{
+    font-size: 20px;
+  }
+}
+
+@media (max-width:521px){
+  q{
+    letter-spacing: 5px;
+  }
+}
+
+@media (max-width:455px){
+  q{
+    letter-spacing: 3px;
+  }
+}
+
+@media(max-width:1564px){
+
+  .logo a {
+    display: none;
+    
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  nav {
+    padding: 0 2rem;
+  }
+}
+
+@media only screen and (max-width: 901px) {
+  .stand{
+    display: none;
+  }
+
+  .books{
+    display:  none;
+  }
+}
