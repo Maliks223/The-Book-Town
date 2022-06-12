@@ -103,7 +103,7 @@ const Books = () => {
                   image={book.image}
                   suspended={book.suspended}
                   refreshFunc={sendRequest}
-                />
+                />  
               )
           )}
       </div>

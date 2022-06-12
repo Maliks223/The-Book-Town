@@ -1,7 +1,7 @@
 .card-container {
   /* width: 300px; */
   overflow: hidden;
-  box-shadow: 0px 0px 15px -5px;
+  box-shadow: 0px 0px 7px -5px;
   transition: 0.3s;
   animation: ease-in;
   margin-top: 0.8rem;
@@ -28,6 +28,12 @@
 }
 .card-body-h1 {
   text-align: center;
+}
+
+.card-body-h1-suspend {
+  text-align: center;
+  color: red;
+  font-size: 17px;
 }
 
 .confirm {
@@ -58,6 +64,42 @@
   font-size: 20px;
 }
 
+.details {
+  display: flex;
+  flex-direction: column;
+  width: 600px;
+  height: 400px;
+}
+
+.details-img {
+  width: 200px;
+  height: 300px;
+  align-self: flex-start;
+}
+
+/* .details-desc {
+  margin-left: 243px;
+  margin-top: 13px;
+} */
+
+.desc {
+  color: dodgerblue;
+  align-self: center;
+  /* margin-left: 300px; */
+}
+
+.details-ex{
+  align-self: flex-end;
+  position: absolute;
+  color: dodgerblue;
+}
+.details-ex:hover{
+  cursor: pointer;
+  color: red;
+}
+
+
+
 .card-container img {
   height: 360px;
   width: 74%;
@@ -65,6 +107,9 @@
   justify-content: center;
   margin-left: 13%;
   padding-top: 10px;
+}
+.card-container img:hover {
+  cursor: context-menu;
 }
 
 .popup-content {
@@ -102,7 +147,7 @@
 
 .card-container:hover {
   transform: scale(1.01);
-  box-shadow: 0px 0px 15px 0px;
+  /* box-shadow: 0px 0px 15px 0px; */
 }
 
 .Book-CardDetail {

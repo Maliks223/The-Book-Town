@@ -6,17 +6,12 @@ import DeleteOutlineIcon from "@mui/icons-material/DeleteOutline";
 import { useSelector } from "react-redux";
 import axios from "axios";
 import "./Card.css";
-
-import PropTypes from "prop-types";
-import Button from "@mui/material/Button";
 import { styled } from "@mui/material/styles";
 import Dialog from "@mui/material/Dialog";
 import DialogTitle from "@mui/material/DialogTitle";
 import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import CloseIcon from "@mui/icons-material/Close";
-import Typography from "@mui/material/Typography";
-import { color } from "@mui/system";
 
 import { makeStyles } from "@material-ui/core/styles";
 const useStyles = makeStyles((theme) => ({
@@ -36,7 +31,6 @@ const Book = ({
   home,
   refreshFunc,
 }) => {
-  console.log(suspended);
   const navigate = useNavigate();
   const isLoggedIn = useSelector((state) => state.isLoggedIn);
   const handleEdit = (e) => {
@@ -44,6 +38,7 @@ const Book = ({
   };
 
   const [dialog, setDialog] = useState(false);
+  const [details, setDetails] = useState(false);
 
   const deleteRequest = async () => {
     let token = localStorage.getItem("token");
@@ -165,6 +160,11 @@ const Book = ({
     // .then(()=>setDialog(true))
   };
   const classes = useStyles();
+
+  const openDescription = () => {
+    setDetails(true);
+    console.log(details);
+  };
   return (
     <>
       <div className="card-container">
@@ -184,24 +184,28 @@ const Book = ({
             </DeleteOutlineIcon>
           </Box>
         )}
-        <img alt="" src={`http://localhost:3002/${image}`} />
+        <img
+          alt=""
+          src={`http://localhost:3002/${image}`}
+          onClick={openDescription}
+        />
         <div className="card-content">
           <div className="card-body">
             <h1 className="card-body-h1">{title}</h1>
             <div className="card-grid-container">
               <div>
-                <p className="Book-CardDetail">Author</p>
-                <p className="Book-CardDetail">Description</p>
-                <h4>Category</h4>
+                {/* <p className="Book-CardDetail">Author</p> */}
+                {/* <p className="Book-CardDetail">Description</p> */}
+                {/* <h4>Category</h4> */}
               </div>
-              <div>
+              {/* <div>
                 <p>: {author}</p>
-                <p>: {description}</p>
+                <p>: {description}</p> 
                 <p>: {category}</p>
-              </div>
+              </div> */}
             </div>
             {/* {suspended == "home" && <div></div>} */}
-            {suspended && <h1 className="card-body-h1">Suspended</h1>}
+            {suspended && <h1 className="card-body-h1-suspend">Suspended</h1>}
           </div>
         </div>
         {!isLoggedIn && !suspended && !home && (
@@ -212,14 +216,14 @@ const Book = ({
                 onClick={handleClickOpen}
                 state={{ bookId: id }}
               >
-                Rent
+                Lend
               </div>
             </button>
             <Dialog
               onClose={handleClose}
               aria-labelledby="customized-dialog-title"
               open={open}
-              classes={{ paper: classes.dialogPaper }}
+              classes={{ paper: classes.dialogPaperDialog }}
             >
               <DialogTitle
                 sx={{
@@ -317,6 +321,20 @@ const Book = ({
           </div>
         )}
       </div>
+      <Dialog sx={{}} open={details}>
+        <div className="details">
+          <h1 className="details-desc desc">Description</h1>
+          <p className="details-desc">{description}</p>
+          <img
+            src={`http://localhost:3002/${image}`}
+            alt="description-image"
+            className="details-img"
+          />
+          <CloseIcon className="details-ex" onClick={() => setDetails(false)}>
+            ok
+          </CloseIcon>
+        </div>
+      </Dialog>
     </>
   );
 };
