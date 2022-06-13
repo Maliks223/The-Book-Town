@@ -67,9 +67,11 @@
 .details {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 550px;
+  width: 600px;
   height: 400px;
   gap: 50px;
+  padding-left: 30px;
+
 }
 
 .details-img {
@@ -91,6 +93,7 @@
 
 .paragraph {
   align-self: center;
+  font-weight: bolder;
 }
 
 .details-ex {
