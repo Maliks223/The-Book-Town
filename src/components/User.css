@@ -3,7 +3,7 @@
 }  */
 
 .User-h1{
-    color: dodgerblue;
+    color:  var(--primary);
 }
 
 .User-form{
@@ -23,7 +23,7 @@
     margin: 8px 0;
     box-sizing: border-box;
     border: none;
-    border-bottom: 2px solid dodgerblue;
+    border-bottom: 2px solid  var(--primary);
     display: block;
     background-color: transparent;
 }
@@ -35,14 +35,14 @@
 }
 
 .User-label{
-    color: dodgerblue;
+    color:  var(--primary);
     font-weight: bold;
 }
 
 .User-submit{
     display: inline-block;
     margin-top: 20px;
-    background-color: dodgerblue;
+    background-color:  var(--primary);
     color: white;
     width: 7rem;
     padding: 0.9rem 1.5rem;
@@ -71,7 +71,7 @@
     width: 100px;
     border: none;
     outline: none;
-    background-color: dodgerblue;
+    background-color:  var(--primary);
 }
 
 .Books-flex{

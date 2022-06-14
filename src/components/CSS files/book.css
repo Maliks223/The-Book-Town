@@ -15,7 +15,7 @@
   margin-bottom: 10px;
   width: 100px;
   outline: none;
-  background-color: dodgerblue;
+  background-color:  var(--primary);
 }
 
 .Books-flex {
@@ -168,7 +168,7 @@ p {
 .btnCard {
   display: flex;
   justify-content: center;
-  color: red;
+  /* color: red; */
 }
 
 .btnCard button {
@@ -320,7 +320,7 @@ p {
 .reject_btn {
   margin-left: 10px;
   padding: 3px;
-  background-color: dodgerblue;
+  background-color:  var(--primary);
   border-radius: 12px;
   color: white;
   border: none;
@@ -330,7 +330,7 @@ p {
 
 .accept_btn {
   padding: 3px;
-  background-color: dodgerblue;
+  background-color:  var(--primary);
   border-radius: 12px;
   color: white;
   border: none;

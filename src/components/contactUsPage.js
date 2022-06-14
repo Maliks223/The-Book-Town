@@ -68,7 +68,7 @@ const ContactUsPage = () => {
             placeholder="Message"
             required
           ></input>
-          <input className="input1 input4" name="subject" onClick={handleAlert} type="submit"></input>
+          <input className="input4" name="subject" onClick={handleAlert} type="submit"></input>
         </div>
       </form>
       <div>

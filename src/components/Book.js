@@ -13,7 +13,7 @@ import DialogContent from "@mui/material/DialogContent";
 import DialogActions from "@mui/material/DialogActions";
 import CloseIcon from "@mui/icons-material/Close";
 
-import { makeStyles } from "@material-ui/core/styles";
+import {makeStyles} from "@material-ui/styles"
 const useStyles = makeStyles((theme) => ({
   dialogPaper: {
     width: "550px",

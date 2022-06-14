@@ -39,7 +39,7 @@ const Banner = () => {
                 <BannerTitle key={title._id} text={title.text}></BannerTitle>
               ))}
             <Link to="/books" className="btn">
-              Lend Now
+              Start the Journey
             </Link>
           </div>
 

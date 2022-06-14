@@ -8,11 +8,11 @@
 
 .AboutUs-h1{
     text-align: center;
-    color: dodgerblue;
+    color: var(--primary);
 }
 
 .AboutUs-h3{
-    color: dodgerblue;
+    color:  var(--primary);
 }
 
 .aboutUsMain .img-aboutUs {

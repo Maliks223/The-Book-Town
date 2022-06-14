@@ -45,13 +45,13 @@
   text-align: center;
   margin-top: 23%;
   font-size: 25px;
-  color: dodgerblue;
+  color:  var(--primary);
   font-weight: bolder;
 }
 
 .confirm-btn {
   padding: 3px;
-  background-color: dodgerblue;
+  background-color:  var(--primary);
   border-radius: 7px;
   color: white;
   border: none;
@@ -68,6 +68,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   width: 550px;
+  margin: 20px;
   height: 400px;
   gap: 50px;
 }
@@ -86,7 +87,7 @@
 } */
 
 .desc {
-  color: dodgerblue;
+  color:  var(--primary);
 }
 
 .paragraph {
@@ -96,7 +97,7 @@
 .details-ex {
   align-self: flex-end;
   position: absolute;
-  color: dodgerblue;
+  color:  var(--primary);
 }
 .details-ex:hover {
   cursor: pointer;

@@ -25,6 +25,20 @@
   justify-content: center;
   align-items: center;
 }
+@media(max-width:576px){
+  .Ftr{
+    position: relative;
+  }
+  .content-aboutUs{
+    margin: 0;
+  }
+  .content-aboutUs h1 {
+    margin-bottom: 20px;
+  }
+  .socialsF{
+    gap: 0;
+  }
+}
 
 q{
     color: white;

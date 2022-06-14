@@ -31,13 +31,12 @@
 .input4{
     padding-left: 1px;
     width: 100px;
-    border-radius: 30px;
+    border-radius: 8px;
     margin-bottom: 20px;
     font-weight: 500;
 }
 
 .input4:hover {
-    padding-left: 1px;
     background-color: var(--primary);
     color: white;
     
@@ -72,7 +71,7 @@
 }
 
 .contact-phone{
-    color: dodgerblue;
+    color:  var(--primary);
     font-weight: bold;
 }
 
@@ -101,7 +100,8 @@
     width: 30vw;
 }
 .social:hover{
-    transform: scale(1.2); 
+    background-color: var(--primary);
+    transform: scaleX(1.01);
 }
 
 @media (max-width: 576px) {
@@ -190,6 +190,6 @@
 }
 @media(max-width:571px){
     .footer{
-        height: 360px;
+        height: 330px;
     }
 }

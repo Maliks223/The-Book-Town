@@ -4,7 +4,7 @@
   background-position: center;
 }
 .banner-title {
-  color: dodgerblue;
+  color:  var(--primary);
   text-transform: uppercase;
   font-size: 60px;
   margin-bottom: 6rem;
@@ -14,7 +14,7 @@
 .address {
   font-size: 65px;
   font-weight: bolder;
-  color: dodgerblue;
+  color:  var(--primary);
   margin-top: -10px;
   margin-left: -30px;
 }
@@ -72,8 +72,8 @@ margin-top: 18px;
   margin-left: 2px;
 }
 .btn:hover {
-  background-color: rgb(0, 125, 251);
-  box-shadow: 0 0 3px var(--primary), 0 0 5px var(--primary);
+  background-color: var(--primary);
+  transform: scaleX(1.01);
 }
 
 @media screen and (max-width: 1371px) {
@@ -99,6 +99,16 @@ margin-top: 18px;
 @media screen and (max-width: 451px) {
   .books a img {
     height: 8rem;
+  }
+  .btn{
+    transform: scale(0.7);
+   width: max-content;
+   margin-left:calc(-50px);
+   margin-top:calc(-50px);
+  }
+  .banner-title{
+    margin-top: 20px;
+    font-size:40px;
   }
 }
 
