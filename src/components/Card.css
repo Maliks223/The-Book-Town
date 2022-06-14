@@ -67,19 +67,18 @@
 .details {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  width: 550px;
-  margin: 20px;
+  width: 600px;
   height: 400px;
   gap: 50px;
+  padding-left: 30px;
 }
 
 .details-img {
   margin-top: 40px;
-  margin-right: 1px;
-    max-height: 320px;
+  margin-right: 12px;
+  max-height: 320px;
   max-width: 225px;
 }
-
 
 /* .details-desc {
   margin-left: 243px;
@@ -92,6 +91,7 @@
 
 .paragraph {
   align-self: center;
+  font-weight: bolder;
 }
 
 .details-ex {
